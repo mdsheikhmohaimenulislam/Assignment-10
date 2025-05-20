@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
       },
       {
         path:'/Plant',
-        loader:() => fetch('http://localhost:5000/plants'),
+
         Component:TableHeaderAllPlants,
       }
     ],
