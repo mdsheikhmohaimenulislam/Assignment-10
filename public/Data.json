@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Fiddle-Leaf Fig Plant",
+    "image_url": "https://i.ibb.co/BRH3MyF/7b10be1c7df1c849d8edf3ee4f4d161f.jpg",
+    "price": 45.99,
+    "weight": "3.2 kg",
+    "description": "A tall, elegant plant with broad, violin-shaped leaves. Ideal for bright indoor spaces. Adds a bold, sculptural statement to any home or office with minimal maintenance."
+  },
+  {
+    "id": 2,
+    "name": "Angel Wings Begonia",
+    "image_url": "https://i.ibb.co/PGtWwP9B/7d6580f3827499d1820805d19e7b5784.jpg",
+    "price": 29.50,
+    "weight": "1.8 kg",
+    "description": "Known for its spotted leaves and graceful form, this begonia thrives indoors. Perfect for shelves or tabletops, it blooms seasonally and enjoys moderate humidity and indirect light."
+  },
+  {
+    "id": 3,
+    "name": "Echeveria Pulidonis",
+    "image_url": "https://i.ibb.co/SD1t2LBf/40c0cb8937cb5708fdcf8eb9399cf227.jpg",
+    "price": 12.75,
+    "weight": "0.5 kg",
+    "description": "A compact succulent with blue-green rosettes edged in red. Low-maintenance and drought-tolerant, it’s a beautiful addition to windowsills and rock gardens. Loves direct sunlight and minimal water."
+  },
+  {
+    "id": 4,
+    "name": "Snake Green Plant",
+    "image_url": "https://i.ibb.co/rKymfK7M/298f44ba8409b9b6011e7e47ab04d9af.jpg",
+    "price": 24.99,
+    "weight": "2.1 kg",
+    "description": "Tall, upright leaves with variegated green tones make this plant a hardy indoor favorite. Excellent air purifier and extremely tolerant of low light and irregular watering schedules."
+  },
+  {
+    "id": 5,
+    "name": "Lucky Bamboo",
+    "image_url": "https://i.ibb.co/wZgnPVwQ/6412b268eebbbd118a65e9fee0ddecf7.jpg",
+    "price": 18.00,
+    "weight": "0.9 kg",
+    "description": "Symbolizing luck and prosperity, Lucky Bamboo is easy to grow in water or soil. Its elegant, spiraling stalks bring peace and harmony to homes and workspaces alike."
+  },
+  {
+    "id": 6,
+    "name": "Corporate Plant",
+    "image_url": "https://i.ibb.co/gLHJy1Tt/8136624a3739da00ab81411863b80351.jpg",
+    "price": 39.99,
+    "weight": "3.0 kg",
+    "description": "A stylish, low-maintenance greenery option perfect for offices. It adds a professional and refreshing look to desks, lobbies, and conference rooms while improving indoor air quality."
+  },
+  {
+    "id": 7,
+    "name": "Asparagus Plant",
+    "image_url": "https://i.ibb.co/xqgdkmQh/519030776a04c0ded10daa1c6ca69dd1.jpg",
+    "price": 22.40,
+    "weight": "1.5 kg",
+    "description": "Feathery and lush, this plant thrives indoors with filtered light. Its soft, airy fronds add texture and freshness. Needs regular watering and appreciates a well-draining potting mix."
+  },
+  {
+    "id": 8,
+    "name": "Ficus Bot Bonsai",
+    "image_url": "https://i.ibb.co/xKtG22z7/b7c187e4c16eaee8559a486f3799cd81.jpg",
+    "price": 59.00,
+    "weight": "2.7 kg",
+    "description": "A miniature tree with thick roots and glossy leaves, the Ficus Bonsai adds artistic elegance to any room. Best in bright, indirect light with consistent moisture and pruning."
+  }
+]
