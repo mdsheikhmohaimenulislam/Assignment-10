@@ -1,6 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import Root from "../Root/Root";
 import Home from "../Components/Home/Home";
+import Login from "../Page/Login/Login";
+import Register from "../Page/Register/Register";
+import AddPlant from "../Page/AddPlant/AddPlant";
+import MyPlants from "../Page/MyPlants/MyPlants";
+import PrivateRouter from "../Context/PrivateRouter/PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -13,8 +18,22 @@ export const router = createBrowserRouter([
         Component: Home,
      
       },
-
-
     ],
   },
+    {
+    path:'/SingleCard',
+    element:<PrivateRouter><AddPlant/></PrivateRouter>
+  },
+  {
+    path:'/profile',
+    element:<PrivateRouter><MyPlants/></PrivateRouter>
+  },
+    {
+    path:'/login',
+    Component:Login,
+  },
+  {
+    path:'/register',
+    Component:Register,
+  }
 ]);
