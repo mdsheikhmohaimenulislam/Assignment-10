@@ -1,58 +1,76 @@
 import React, { use, useState } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import { Bounce, toast } from "react-toastify";
 
 const AddPlant = () => {
+  const { user } = use(AuthContext);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCare, setSelectedCare] = useState("");
 
-    const {user} = use(AuthContext)
-      const [selectedCategory, setSelectedCategory] = useState("");
-       const [selectedCare, setSelectedCare] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const form = e.target;
+    const photo = form.photo.value;
+    const name = form.name.value;
+    const Category = selectedCategory;
+    const Description = form.Description.value;
+    const care = selectedCare;
+    const WateringFrequency = form.WateringFrequency.value;
+    const LastWateredDate = form.LastWateredDate.value;
+    const NextWateringDate = form.NextWateringDate.value;
+    const Health = form.Health.value;
+    const displayName = form.displayName.value;
+    const email = form.email.value;
 
-        const form = e.target;
-        const photo = form.photo.value;
-        const name = form.name.value;
-        const Category = selectedCategory;
-        const Description = form.Description.value;
-        const care = selectedCare;
-        const WateringFrequency = form.WateringFrequency.value;
-        const LastWateredDate = form.LastWateredDate.value;
-        const NextWateringDate = form.NextWateringDate.value;
-        const Health = form.Health.value;
-        const displayName = form.displayName.value;
-        const email = form.email.value;
+    const allData = {
+      photo,
+      name,
+      Category,
+      Description,
+      care,
+      WateringFrequency,
+      LastWateredDate,
+      NextWateringDate,
+      Health,
+      displayName,
+      email,
+    };
+    console.log(allData);
 
-        const allData = {
-            photo,
-            name,
-            Category,
-            Description,
-            care,
-            WateringFrequency,
-            LastWateredDate,
-            NextWateringDate,
-            Health,
-            displayName,
-            email
+    // Send Plants to the DB.
+    fetch("http://localhost:5000/plants", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(allData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Plant Added Successfully", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+        //   form.reset()
         }
-
-        console.log(allData);
-
-    }
-
-
-
-
-
-
+        console.log("save db", data);
+      });
+  };
 
   const handleSelect = (value) => {
     setSelectedCategory(value);
   };
 
-  
   const handleSelectCare = (value) => {
     setSelectedCare(value);
   };
@@ -65,7 +83,7 @@ const AddPlant = () => {
       <div className="w-11/12 mx-auto">
         <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
           <form
-          onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             className="container flex flex-col mx-auto space-y-12"
           >
             <div className="grid grid-cols-1 ml:grid-cols-2 lg:grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
@@ -213,7 +231,7 @@ const AddPlant = () => {
               <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
                 <legend className="fieldset-legend">User Name</legend>
                 <input
-                readOnly
+                  readOnly
                   type="text"
                   name="displayName"
                   value={user?.displayName || ""}
@@ -225,7 +243,7 @@ const AddPlant = () => {
               <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
                 <legend className="fieldset-legend">User Email</legend>
                 <input
-                readOnly
+                  readOnly
                   type="email"
                   name="email"
                   value={user?.email || ""}
@@ -234,7 +252,9 @@ const AddPlant = () => {
                 />
               </fieldset>
             </div>
-            <button type="submit" className="w-full btn text-2xl p-8 mb-20">Submit</button>
+            <button type="submit" className="w-full btn text-2xl p-8 mb-20">
+              Submit
+            </button>
           </form>
         </section>
       </div>
