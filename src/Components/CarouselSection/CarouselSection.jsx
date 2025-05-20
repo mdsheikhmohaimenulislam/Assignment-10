@@ -7,7 +7,7 @@ const CarouselSection = () => {
 <div className="carousel w-full">
       <div id="slide1" className="carousel-item relative w-full">
         <img
-          src="/Sider1.png"
+          src="/Carousel1.png"
           className="w-full h-[300px] md:h-[400px] lg:h-[500px]  object-cover rounded-lg"
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -22,7 +22,7 @@ const CarouselSection = () => {
       <div id="slide2" className="carousel-item relative w-full">
         <img
     
-          src="/Sider2.png"
+          src="/Carousel2.png"
           className="w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-lg object-cover"
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -36,7 +36,7 @@ const CarouselSection = () => {
       </div>
       <div id="slide3" className="carousel-item relative w-full">
         <img 
-          src="/Sider3.png"
+          src="/Carousel3.png"
           className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -50,7 +50,7 @@ const CarouselSection = () => {
       </div>
       <div id="slide4" className="carousel-item relative w-full">
         <img
-          src="/Sider4.png"
+          src="/Carousel4.png"
           className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
         />
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">

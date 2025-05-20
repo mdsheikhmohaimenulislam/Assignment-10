@@ -1,45 +1,46 @@
-import React, { use } from "react";
-import { IoIosContact } from "react-icons/io";
+import React from "react";
 import { Link, NavLink } from "react-router";
-import { AuthContext } from "../../Contexts/AuthContext/AuthContext";
-import { toast } from "react-toastify";
+// import { IoIosContact } from "react-icons/io";
+
+// import { AuthContext } from "../../Contexts/AuthContext/AuthContext";
+// import { toast } from "react-toastify";
 
 const NavBar = () => {
-  const { logOutHandle, user } = use(AuthContext);
+//   const { logOutHandle, user } = use(AuthContext);
 
   // logOut section
-  const handleLogOut = () => {
-    logOutHandle()
-      .then(() => {})
-      .catch((error) => {
-        console.log(error);
-      });
-    toast.error("Log Out", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  };
+//   const handleLogOut = () => {
+//     logOutHandle()
+//       .then(() => {})
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//     toast.error("Log Out", {
+//       position: "top-right",
+//       autoClose: 5000,
+//       hideProgressBar: false,
+//       closeOnClick: false,
+//       pauseOnHover: true,
+//       draggable: true,
+//       progress: undefined,
+//       theme: "light",
+//     });
+//   };
 
-const Links = (
-  <>
-    {user && (
-      <>
-        <NavLink className="font-extrabold text-xl" to="/AddPlants">
-          Add Plants
-        </NavLink>
-        <NavLink className="font-extrabold text-xl" to="/MyPlants">
-          My Plants
-        </NavLink>
-      </>
-    )}
-  </>
-);
+// const Links = (
+//   <>
+//     {user && (
+//       <>
+//         <NavLink className="font-extrabold text-xl" to="/AddPlants">
+//           Add Plants
+//         </NavLink>
+//         <NavLink className="font-extrabold text-xl" to="/MyPlants">
+//           My Plants
+//         </NavLink>
+//       </>
+//     )}
+//   </>
+// );
 
 
   return (
@@ -68,7 +69,7 @@ const Links = (
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              {Links}
+              {/* {Links} */}
               <NavLink className="text-xl font-extrabold" to="/profile">
                 Home
               </NavLink>
@@ -80,17 +81,17 @@ const Links = (
           <Link to="/">
           <div className="flex items-center">
             <img
-              className="-ml-6 md:ml-0 w-[60px] h-[40px]"
-              src="/App-Store-Logo-removebg-preview.png"
+              className="-ml-6 md:ml-0 w-[50px] h-[50px]"
+              src="/logo.png"
               alt=""
             />
-            <h1 className="ml-0">AppStore</h1>
+            <h1 className="ml-0">GreenNest</h1>
           </div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu gap-10 menu-horizontal mr-10 px-1">
-            {Links}
+            {/* {Links} */}
             <NavLink className="text-xl font-extrabold" to="/profile">
               Home
             </NavLink>
@@ -100,7 +101,7 @@ const Links = (
           </ul>
         </div>
 <div className="flex navbar-end">
-{user && user.photoURL ? (
+{/* {user && user.photoURL ? (
           <img
             className="w-[45px] h-[45px] hidden md:block rounded-full"
             src={user.photoURL}
@@ -115,7 +116,7 @@ const Links = (
           ) : (
             <Link to="/login">Login</Link>
           )}
-        </div>
+        </div> */}
 </div>
       </div>
     </div>
