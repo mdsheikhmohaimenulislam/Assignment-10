@@ -1,14 +1,19 @@
-import React from 'react';
-import CarouselSection from '../CarouselSection/CarouselSection';
-import PlantsCard from '../PlantsCard/PlantsCard';
+
+import { useLoaderData } from "react-router";
+import CarouselSection from "../CarouselSection/CarouselSection";
+import PlantsCard from "../PlantsCard/PlantsCard";
+
+
 
 const Home = () => {
-    return (
-        <>
-            <CarouselSection/>
-            <PlantsCard/>
-        </>
-    );
+const data = useLoaderData()
+
+  return (
+    <>
+      <CarouselSection />
+<PlantsCard data={data}/>
+    </>
+  );
 };
 
 export default Home;

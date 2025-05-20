@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router";
 
-const SinglePlantsCard = ({plant}) => {
-  const { image_url, name } = plant || {};
-  
+const SinglePlantsCard = ({ plant }) => {
+  const { image_url, name, id } = plant || {};
 
   return (
     <div className="card bg-base-100 shadow-sm mb-10">
@@ -12,7 +12,9 @@ const SinglePlantsCard = ({plant}) => {
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
       </div>
-       <button className="btn w-full ">View Details</button>
+      <Link to={`/Details/${id}`}>
+        <button className="btn w-full ">View Details</button>
+      </Link>
     </div>
   );
 };

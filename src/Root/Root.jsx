@@ -10,7 +10,7 @@ const Root = () => {
            <div className='w-11/12 mx-auto'>
              <Outlet/>
            </div>
-            <Footer/>
+
         </div>
     );
 };
