@@ -21,11 +21,11 @@ export const router = createBrowserRouter([
     ],
   },
     {
-    path:'/SingleCard',
+    path:'/AddPlants',
     element:<PrivateRouter><AddPlant/></PrivateRouter>
   },
   {
-    path:'/profile',
+    path:'/MyPlants',
     element:<PrivateRouter><MyPlants/></PrivateRouter>
   },
     {
