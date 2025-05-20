@@ -191,7 +191,7 @@ const AddPlant = () => {
               <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
                 <legend className="fieldset-legend">Watering Frequency</legend>
                 <input
-                  type="date"
+                  type="text"
                   name="WateringFrequency"
                   className="input"
                   placeholder="Watering Frequency"

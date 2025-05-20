@@ -71,7 +71,7 @@ const NavBar = () => {
               <NavLink className="text-xl font-extrabold" to="/">
                 Home
               </NavLink>
-              <NavLink className="text-xl font-extrabold" to="/AllPlants">
+              <NavLink className="text-xl font-extrabold" to="/Plant">
                 All Plants
               </NavLink>
               {Links}
@@ -93,7 +93,7 @@ const NavBar = () => {
             <NavLink className="text-xl font-extrabold" to="/">
               Home
             </NavLink>
-            <NavLink className="text-xl font-extrabold" to="/AllPlants">
+            <NavLink className="text-xl font-extrabold" to="/Plant">
               All Plants
             </NavLink>
             {Links}
