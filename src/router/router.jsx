@@ -9,6 +9,11 @@ export const router = createBrowserRouter([
     Component: Root,
     children: [
       {
+        hydrateFallbackElement:(
+          <div className="text-center">
+            <span className="loading loading-ring loading-xl"></span>
+          </div>
+        ),
         index: true,
         path: "/",
         Component: Home,
