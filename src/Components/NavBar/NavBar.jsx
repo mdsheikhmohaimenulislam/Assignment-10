@@ -68,10 +68,10 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <NavLink className="text-xl font-extrabold" to="/profile">
+              <NavLink className="text-xl font-extrabold" to="/">
                 Home
               </NavLink>
-              <NavLink className="text-xl font-extrabold" to="/profile">
+              <NavLink className="text-xl font-extrabold" to="/AllPlants">
                 All Plants
               </NavLink>
               {Links}
@@ -90,10 +90,10 @@ const NavBar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu gap-10 menu-horizontal mr-10 px-1">
-            <NavLink className="text-xl font-extrabold" to="/profile">
+            <NavLink className="text-xl font-extrabold" to="/">
               Home
             </NavLink>
-            <NavLink className="text-xl font-extrabold" to="/profile">
+            <NavLink className="text-xl font-extrabold" to="/AllPlants">
               All Plants
             </NavLink>
             {Links}
