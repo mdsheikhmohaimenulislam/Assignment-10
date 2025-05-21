@@ -37,7 +37,7 @@ const AddPlant = () => {
       displayName,
       email,
     };
-    console.log(allData);
+
 
     // Send Plants to the DB.
     fetch("http://localhost:5000/plants", {
