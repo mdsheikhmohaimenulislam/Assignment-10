@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { Bounce, toast } from "react-toastify";
@@ -64,8 +64,12 @@ const AddPlant = () => {
         //   form.reset()
         }
    
-      });
+      });  
   };
+
+  useEffect(() => {
+    document.title = "Add Plants";
+  },[])
 
   const handleSelect = (value) => {
     setSelectedCategory(value);

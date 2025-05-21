@@ -15,9 +15,9 @@ const MyPlants = () => {
         const filterPlants = data.filter(
           (plant) => plant.email === user?.email
         );
-
         setPlants(filterPlants);
       });
+      document.title = "My Plants";
   }, []);
 
   // Deleted section

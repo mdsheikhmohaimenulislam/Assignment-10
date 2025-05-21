@@ -17,6 +17,7 @@ const TableHeaderAllPlants = () => {
     .then(data => {
         setPlants(data)
     } )
+      document.title = "All Plants";
   },[search])
 
 

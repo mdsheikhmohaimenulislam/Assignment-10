@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { Link, useLoaderData, useNavigate } from "react-router";
 import { Bounce, toast } from "react-toastify";
@@ -73,6 +73,11 @@ const UpdatePlant = () => {
         }
       });
   };
+
+
+   useEffect(() => {
+    document.title = "Update Plant";
+  },[]);
 
   const handleSelect = (value) => {
     setSelectedCategory(value);
