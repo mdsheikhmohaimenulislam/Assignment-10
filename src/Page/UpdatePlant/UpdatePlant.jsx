@@ -13,12 +13,22 @@ const UpdatePlant = () => {
 
   const handleBack = () => {
     navigate(-1);
-  }
+  };
 
   const plant = useLoaderData();
   if (!plant || !plant._id) {
     return (
-
+      <div className="w-2/5 mx-auto ">
+        <Lottie animationData={animation} />
+        <div className="text-center mt-20 text-5xl">
+          <button
+            onClick={handleBack}
+            className="btn bg-green-700 text-white rounded-md"
+          >
+            Back
+          </button>
+        </div>
+      </div>
     );
   }
   const {
