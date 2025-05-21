@@ -7,7 +7,7 @@ const TableHeaderAllPlants = () => {
   const [plants,setPlants] = useState([]);
 
   const [search, setSearch] = useState("")
-  console.log(search);
+
 
 
 
@@ -19,7 +19,7 @@ const TableHeaderAllPlants = () => {
     } )
   },[search])
 
-  console.log(plants);
+
 
 
 

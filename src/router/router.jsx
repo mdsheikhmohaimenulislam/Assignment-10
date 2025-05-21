@@ -7,10 +7,13 @@ import AddPlant from "../Page/AddPlant/AddPlant";
 import MyPlants from "../Page/MyPlants/MyPlants";
 import PrivateRouter from "../Context/PrivateRouter/PrivateRouter";
 import TableHeaderAllPlants from "../Page/TableHeaderAllPlants/TableHeaderAllPlants";
+import PlantsDetails from "../Page/PlantsDetails/PlantsDetails";
+import Error from "../Components/Home/Error/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
+    errorElement:<Error/>,
     Component: Root,
     children: [
       {
@@ -20,9 +23,15 @@ export const router = createBrowserRouter([
       },
       {
         path:'/Plant',
-
         Component:TableHeaderAllPlants,
+      },
+      {
+
+        path:'/PlantsDetails/:id',
+        Component:PlantsDetails,
+        loader:() => fetch(`http://localhost:5000/plants`)
       }
+
     ],
   },
     {

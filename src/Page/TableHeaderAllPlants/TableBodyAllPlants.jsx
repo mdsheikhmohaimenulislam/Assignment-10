@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const TableBodyAllPlants = ({ plant }) => {
-  const { photo, name, Category, WateringFrequency, care, LastWateredDate } =
+  const { photo, _id ,name, Category, WateringFrequency, care, LastWateredDate } =
     plant || {};
 
   return (
@@ -21,7 +21,7 @@ const TableBodyAllPlants = ({ plant }) => {
         <td>{care}</td>
         <td>{LastWateredDate}</td>
         <td>
-          <Link to="/plantsDetails">
+          <Link to={`/PlantsDetails/${_id}`}>
             <button className="btn btn-ghost btn-xs">Details</button>
           </Link>
         </td>

@@ -1,0 +1,48 @@
+import React from "react";
+import { Link } from "react-router";
+
+const SingleDetails = (plants) => {
+  const {
+    photo,
+    name,
+    care,
+    WateringFrequency,
+    NextWateringDate,
+    LastWateredDate,
+    Health,
+    Description,
+    Category,
+  } = plants?.singlePlant || {};
+
+  return (
+    <div>
+      <div className="card bg-base-100  shadow-sm mb-20">
+        <figure>
+          <img width={400} src={photo} alt="photo" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title text-2xl">{name}</h2>
+          <p className="text-base-600">{Description}</p>
+          <div className="flex">
+            <div className="flex space-x-10 ">
+              <p className="text-xl">{care}</p>
+              <p className="text-xl">{WateringFrequency}</p>
+              <p className="text-xl">{NextWateringDate}</p>
+            </div>
+
+            <p className="text-xl ml-10">{Health}</p>
+            <p className="text-xl">{Category}</p>
+            <p className="text-xl">{LastWateredDate}</p>
+          </div>
+        </div>
+        <Link to="/">
+          <button className="btn w-full text-green-600 border-green-500">
+            Go to Home
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default SingleDetails;
