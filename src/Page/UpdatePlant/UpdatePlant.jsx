@@ -75,10 +75,6 @@ const UpdatePlant = () => {
   };
 
 
-   useEffect(() => {
-    document.title = "Update Plant";
-  },[]);
-
   const handleSelect = (value) => {
     setSelectedCategory(value);
   };
