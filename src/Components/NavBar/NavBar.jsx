@@ -119,7 +119,7 @@ const NavBar = () => {
           )}
 
           {/* Auth Button */}
-          <div className="btn px-10 bg-secondary text-base-100 p-2 cursor-pointer">
+          <div className="btn px-10 bg-green-800 text-base-100 p-2 cursor-pointer">
             {user ? (
               <Link onClick={handleLogOut}>Log Out</Link>
             ) : (
@@ -127,27 +127,6 @@ const NavBar = () => {
             )}
           </div>
         </div>
-        {/* <div className="flex navbar-end">
-          {user && user.photoURL ? (
-            <img
-              className="w-[45px] h-[45px] hidden md:block rounded-full"
-              src={user.photoURL}
-              alt="photo"
-            />
-          ) : (
-            <IoIosContact size={45} />
-          )}
-          <div className="px-4 py-2 text-sm text-gray-700">
-            {user.displayName || "User"}
-          </div>
-          <div className="btn  px-10 bg-secondary text-base-100 p-2 cursor-pointer">
-            {user ? (
-              <Link onClick={handleLogOut}>Log Out</Link>
-            ) : (
-              <Link to="/login">Login</Link>
-            )}
-          </div>
-        </div> */}
       </div>
     </div>
   );
