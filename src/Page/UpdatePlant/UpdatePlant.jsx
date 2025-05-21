@@ -1,58 +1,57 @@
 import React, { use, useState } from "react";
-import NavBar from "../../Components/NavBar/NavBar";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import { Link, useLoaderData, useNavigate } from "react-router";
 import { Bounce, toast } from "react-toastify";
+import Lottie from "lottie-react";
+import animation from "/public/Animation.json";
 
-const AddPlant = () => {
+const UpdatePlant = () => {
   const { user } = use(AuthContext);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedCare, setSelectedCare] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleBack = () => {
+    navigate(-1);
+  }
+
+  const plant = useLoaderData();
+  if (!plant || !plant._id) {
+    return (
+
+    );
+  }
+  const {
+    photo,
+    name,
+    Description,
+    WateringFrequency,
+    LastWateredDate,
+    NextWateringDate,
+    Health,
+    _id,
+  } = plant;
+
+  const handleUpdate = (e) => {
     e.preventDefault();
-
     const form = e.target;
-    const photo = form.photo.value;
-    const name = form.name.value;
-    const Category = selectedCategory;
-    const Description = form.Description.value;
-    const care = selectedCare;
-    const WateringFrequency = form.WateringFrequency.value;
-    const LastWateredDate = form.LastWateredDate.value;
-    const NextWateringDate = form.NextWateringDate.value;
-    const Health = form.Health.value;
-    const displayName = form.displayName.value;
-    const email = form.email.value;
+    const formData = new FormData(form);
+    const updatePlants = Object.fromEntries(formData.entries());
 
-    const allData = {
-      photo,
-      name,
-      Category,
-      Description,
-      care,
-      WateringFrequency,
-      LastWateredDate,
-      NextWateringDate,
-      Health,
-      displayName,
-      email,
-    };
-    console.log(allData);
-
-    // Send Plants to the DB.
-    fetch("http://localhost:5000/plants", {
-      method: "POST",
+    // Send update plants to the db
+    fetch(`http://localhost:5000/plants/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(allData),
+      body: JSON.stringify(updatePlants),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
-          toast.success("Plant Added Successfully", {
+        if (data.modifiedCount) {
+          toast.success("Plant Update Successfully", {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: false,
             pauseOnHover: true,
@@ -61,9 +60,7 @@ const AddPlant = () => {
             theme: "light",
             transition: Bounce,
           });
-        //   form.reset()
         }
-   
       });
   };
 
@@ -75,15 +72,15 @@ const AddPlant = () => {
     setSelectedCare(value);
   };
 
-
-
   return (
     <>
-      <NavBar />
-      <div className="w-11/12 mx-auto">
+      <div>
         <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
+          <h1 className="text-center font-extrabold text-4xl mb-15">
+            Update Plant
+          </h1>
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleUpdate}
             className="container flex flex-col mx-auto space-y-12"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
@@ -93,6 +90,7 @@ const AddPlant = () => {
                 <input
                   type="photoURL"
                   name="photo"
+                  defaultValue={photo}
                   className="input"
                   placeholder="Plant URL"
                 />
@@ -102,6 +100,7 @@ const AddPlant = () => {
                 <legend className="fieldset-legend">Plant Name</legend>
                 <input
                   type="text"
+                  defaultValue={name}
                   name="name"
                   className="input"
                   placeholder="Plant Name"
@@ -146,6 +145,7 @@ const AddPlant = () => {
                 <legend className="fieldset-legend">Description</legend>
                 <input
                   type="text"
+                  defaultValue={Description}
                   name="Description"
                   className="input"
                   placeholder="Description"
@@ -192,6 +192,7 @@ const AddPlant = () => {
                 <legend className="fieldset-legend">Watering Frequency</legend>
                 <input
                   type="text"
+                  defaultValue={WateringFrequency}
                   name="WateringFrequency"
                   className="input"
                   placeholder="Watering Frequency"
@@ -203,6 +204,7 @@ const AddPlant = () => {
                 <input
                   type="date"
                   name="LastWateredDate"
+                  defaultValue={LastWateredDate}
                   className="input"
                   placeholder="Last Watered Date"
                 />
@@ -213,6 +215,7 @@ const AddPlant = () => {
                 <input
                   type="date"
                   name="NextWateringDate"
+                  defaultValue={NextWateringDate}
                   className="input"
                   placeholder="Next Watering Date"
                 />
@@ -223,6 +226,7 @@ const AddPlant = () => {
                 <input
                   type="text"
                   name="Health"
+                  defaultValue={Health}
                   className="input"
                   placeholder="Health Status"
                 />
@@ -253,7 +257,7 @@ const AddPlant = () => {
               </fieldset>
             </div>
             <button type="submit" className="w-full btn text-2xl p-8 mb-20">
-              Add Plant
+              Update Plant
             </button>
           </form>
         </section>
@@ -262,4 +266,4 @@ const AddPlant = () => {
   );
 };
 
-export default AddPlant;
+export default UpdatePlant;

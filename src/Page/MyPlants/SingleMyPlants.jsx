@@ -1,10 +1,9 @@
 import React from "react";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
-import Swal from "sweetalert2";
+import { Link } from "react-router";
 
-const SingleMyPlants = ({ plant ,handleDeleted}) => {
-
+const SingleMyPlants = ({ plant, handleDeleted }) => {
   const {
     photo,
     name,
@@ -18,11 +17,9 @@ const SingleMyPlants = ({ plant ,handleDeleted}) => {
     _id,
   } = plant || {};
 
-
   const remove = (id) => {
-    handleDeleted(id)
-  }
-
+    handleDeleted(id);
+  };
 
   return (
     <div>
@@ -44,9 +41,11 @@ const SingleMyPlants = ({ plant ,handleDeleted}) => {
             <p>{Health}</p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-dash btn-success">
-              <CiEdit size={25} />
-            </button>
+            <Link to={`/updatePlant/${_id}`}>
+              <button className="btn btn-dash btn-success">
+                <CiEdit size={25} />
+              </button>
+            </Link>
             <button
               onClick={() => remove(_id)}
               className="btn btn-dash btn-error"

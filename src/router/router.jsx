@@ -9,6 +9,7 @@ import PrivateRouter from "../Context/PrivateRouter/PrivateRouter";
 import TableHeaderAllPlants from "../Page/TableHeaderAllPlants/TableHeaderAllPlants";
 import PlantsDetails from "../Page/PlantsDetails/PlantsDetails";
 import Error from "../Components/Home/Error/Error";
+import UpdatePlant from "../Page/UpdatePlant/UpdatePlant";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,12 @@ export const router = createBrowserRouter([
         path:'/PlantsDetails/:id',
         Component:PlantsDetails,
         loader:() => fetch(`http://localhost:5000/plants`)
+      },
+
+      {
+        path:'/updatePlant/:id',
+        Component:UpdatePlant,
+        loader:({params}) => fetch(`http://localhost:5000/plants/${params.id}`)
       }
 
     ],
