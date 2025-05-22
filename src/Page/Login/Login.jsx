@@ -5,6 +5,7 @@ import { Bounce, toast } from "react-toastify";
 
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import NavBar from "../../Components/NavBar/NavBar";
+import Footer from "../../Components/Footer/Footer";
 
 const Login = () => {
   const { loginHandle, googleHandle } = use(AuthContext);
@@ -190,6 +191,7 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

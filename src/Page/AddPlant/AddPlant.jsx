@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { Bounce, toast } from "react-toastify";
+import Footer from "../../Components/Footer/Footer";
 
 const AddPlant = () => {
   const { user } = use(AuthContext);
@@ -262,6 +263,7 @@ const AddPlant = () => {
           </form>
         </section>
       </div>
+      <Footer/>
     </>
   );
 };

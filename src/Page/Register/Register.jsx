@@ -1,16 +1,16 @@
 import React, { use, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
-
 import { toast } from "react-toastify";
 
-
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import Footer from "../../Components/Footer/Footer";
+import NavBar from "../../Components/NavBar/NavBar";
 
 const Register = () => {
-
   const navigate = useNavigate();
-  const { signInHandle, updateProfileHandle, setUser, googleHandle } =use(AuthContext);
+  const { signInHandle, updateProfileHandle, setUser, googleHandle } =
+    use(AuthContext);
   const [errorMessage, setErrorMessage] = useState("");
 
   const registerHandel = (e) => {
@@ -92,7 +92,7 @@ const Register = () => {
 
   return (
     <>
- 
+    <NavBar/>
       <div className="w-11/12 mx-auto mb-10 mt-10 bg-base-200 min-h-screen p-10">
         <div className="w-full mx-auto max-w-md p-10 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Register</h1>
@@ -196,7 +196,7 @@ const Register = () => {
           </p>
         </div>
       </div>
-   
+      <Footer />
     </>
   );
 };

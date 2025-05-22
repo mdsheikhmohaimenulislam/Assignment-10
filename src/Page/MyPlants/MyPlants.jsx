@@ -3,6 +3,7 @@ import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import SingleMyPlants from "./SingleMyPlants";
 import NavBar from "../../Components/NavBar/NavBar";
 import Swal from "sweetalert2";
+import Footer from "../../Components/Footer/Footer";
 
 const MyPlants = () => {
   const { user } = use(AuthContext);
@@ -68,6 +69,7 @@ const MyPlants = () => {
           />
         ))}
       </div>
+      <Footer/>
     </>
   );
 };

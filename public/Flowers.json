@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Lavender",
+    "image_url": "https://i.ibb.co/8nYpZRK6/0418dba8bbef15142a5d06784d483907.jpg",
+    "category": "flower",
+    "description": "Lavender is a fragrant purple flower known for its calming scent. Commonly used in aromatherapy, it also attracts pollinators and thrives in sunny, well-drained gardens."
+  },
+  {
+    "id": 2,
+    "name": "Tulips",
+    "image_url": "https://i.ibb.co/JNdcqnx/564d20a85076db72ac16260ac786e7cd.jpg",
+    "category": "flower",
+    "description": "Tulips are classic spring-blooming flowers with bright, cup-shaped petals. They come in many colors and symbolize love, rebirth, and elegance, often seen in gardens and floral displays."
+  },
+  {
+    "id": 3,
+    "name": "Bellis perennis",
+    "image_url": "https://i.ibb.co/rGT9dxwN/8878aab8376ed04d73faacc1d5094c40.jpg",
+    "category": "flower",
+    "description": "Bellis perennis, or the common daisy, has white petals and a yellow center. It’s a cheerful wildflower that thrives in lawns, meadows, and low-maintenance gardens."
+  },
+  {
+    "id": 4,
+    "name": "Anthurium Plant",
+    "image_url": "https://i.ibb.co/CpgZjPmc/9996e86537df5815b2e23ba7341c7997.jpg",
+    "category": "flower",
+    "description": "Anthurium is a striking tropical plant known for its waxy, heart-shaped spathes. It blooms in red, pink, or white and is popular as a houseplant and cut flower."
+  },
+  {
+    "id": 5,
+    "name": "Floribunda Roses",
+    "image_url": "https://i.ibb.co/JFtmFgxq/cec25f660e24c866d1123b19de5c4a2e.jpg",
+    "category": "flower",
+    "description": "Floribunda roses are bushy, hardy shrubs producing clusters of roses. They bloom continuously through the season and combine color variety with disease resistance and low maintenance."
+  },
+  {
+    "id": 6,
+    "name": "Chrysanthemum",
+    "image_url": "https://i.ibb.co/GQkDvY2d/9977504f93577e34dceacc6a65824239.jpg",
+    "category": "flower",
+    "description": "Chrysanthemums are colorful, full-headed flowers blooming in fall. Popular in floral arrangements and gardens, they symbolize longevity, happiness, and are often seen during seasonal festivals."
+  }
+]

@@ -39,6 +39,14 @@ const Footer = () => {
   return (
     <div>
       <footer className="footer footer-horizontal footer-center bg-base-300 text-base-content rounded p-10">
+            <div className="flex items-center">
+              <img
+                className="-ml-6 md:ml-0 w-[50px] h-[50px]"
+                src="/logo.png"
+                alt=""
+              />
+              <h1 className="ml-0 text-2xl font-extrabold">GreenNest</h1>
+            </div>
         <nav className="grid grid-flow-col gap-4">
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>

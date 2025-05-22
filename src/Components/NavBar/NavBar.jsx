@@ -50,7 +50,7 @@ const NavBar = () => {
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-5 w-5 "
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -78,13 +78,13 @@ const NavBar = () => {
             </ul>
           </div>
           <Link to="/">
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <img
                 className="-ml-6 md:ml-0 w-[50px] h-[50px]"
                 src="/logo.png"
                 alt=""
               />
-              <h1 className="ml-0">GreenNest</h1>
+              <h1 className="ml-0 md:text-2xl font-extrabold">GreenNest</h1>
             </div>
           </Link>
         </div>
