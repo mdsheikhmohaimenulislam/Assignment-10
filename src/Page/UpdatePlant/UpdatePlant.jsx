@@ -49,7 +49,7 @@ const UpdatePlant = () => {
     const updatePlants = Object.fromEntries(formData.entries());
 
     // Send update plants to the db
-    fetch(`http://localhost:5000/plants/${_id}`, {
+    fetch(`https://mango-server-seven.vercel.app/plants/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -73,7 +73,6 @@ const UpdatePlant = () => {
         }
       });
   };
-
 
   const handleSelect = (value) => {
     setSelectedCategory(value);

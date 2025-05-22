@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../../Context/AuthContext/AuthContext";
 
 const TableBodyAllPlants = ({ plant }) => {
+
+
+
   const { photo, _id ,name, Category, WateringFrequency, care, LastWateredDate } =
     plant || {};
 

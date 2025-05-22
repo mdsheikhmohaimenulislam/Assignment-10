@@ -39,9 +39,8 @@ const AddPlant = () => {
       email,
     };
 
-
     // Send Plants to the DB.
-    fetch("http://localhost:5000/plants", {
+    fetch("https://mango-server-seven.vercel.app/plants", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -62,15 +61,14 @@ const AddPlant = () => {
             theme: "light",
             transition: Bounce,
           });
-        //   form.reset()
+          //   form.reset()
         }
-   
-      });  
+      });
   };
 
   useEffect(() => {
     document.title = "Add Plants";
-  },[])
+  }, []);
 
   const handleSelect = (value) => {
     setSelectedCategory(value);
@@ -79,8 +77,6 @@ const AddPlant = () => {
   const handleSelectCare = (value) => {
     setSelectedCare(value);
   };
-
-
 
   return (
     <>
@@ -263,7 +259,7 @@ const AddPlant = () => {
           </form>
         </section>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -14,47 +14,58 @@ import UpdatePlant from "../Page/UpdatePlant/UpdatePlant";
 export const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<Error/>,
+    errorElement: <Error />,
     Component: Root,
     children: [
       {
-         index: true,
-        path:"/",
+        index: true,
+        path: "/",
         Component: Home,
       },
       {
-        path:'/Plant',
-        Component:TableHeaderAllPlants,
+        path: "/Plant",
+        Component: TableHeaderAllPlants,
       },
       {
-
-        path:'/PlantsDetails/:id',
-        Component:PlantsDetails,
-        loader:() => fetch(`http://localhost:5000/plants`)
+        path: "/PlantsDetails/:id",
+        element: (
+          <PrivateRouter>
+            <PlantsDetails />
+          </PrivateRouter>
+        ),
+        loader: () => fetch(`https://mango-server-seven.vercel.app/plants`),
       },
 
       {
-        path:'/updatePlant/:id',
-        Component:UpdatePlant,
-        loader:({params}) => fetch(`http://localhost:5000/plants/${params.id}`)
-      }
-
+        path: "/updatePlant/:id",
+        Component: UpdatePlant,
+        loader: ({ params }) =>
+          fetch(`https://mango-server-seven.vercel.app/plants/${params.id}`),
+      },
     ],
   },
-    {
-    path:'/AddPlants',
-    element:<PrivateRouter><AddPlant/></PrivateRouter>
+  {
+    path: "/AddPlants",
+    element: (
+      <PrivateRouter>
+        <AddPlant />
+      </PrivateRouter>
+    ),
   },
   {
-    path:'/MyPlants',
-    element:<PrivateRouter><MyPlants/></PrivateRouter>
-  },
-    {
-    path:'/login',
-    Component:Login,
+    path: "/MyPlants",
+    element: (
+      <PrivateRouter>
+        <MyPlants />
+      </PrivateRouter>
+    ),
   },
   {
-    path:'/register',
-    Component:Register,
-  }
+    path: "/login",
+    Component: Login,
+  },
+  {
+    path: "/register",
+    Component: Register,
+  },
 ]);

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
-import SingleDetails from './SingleDetails';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import SingleDetails from "./SingleDetails";
 
 const PlantsDetails = () => {
   const { id } = useParams();
@@ -13,7 +13,9 @@ const PlantsDetails = () => {
 
     const fetchPlant = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/plants/${id}`);
+        const res = await fetch(
+          `https://mango-server-seven.vercel.app/plants/${id}`
+        );
 
         if (!res.ok) {
           navigate("/not-found");
@@ -34,13 +36,10 @@ const PlantsDetails = () => {
     fetchPlant();
   }, [id, navigate]);
 
-  if (loading) return <span className="loading ml-100 loading-ring loading-xl"></span>;
+  if (loading)
+    return <span className="loading ml-100 loading-ring loading-xl"></span>;
 
-  return (
-    <div>
-      {plant && <SingleDetails singlePlant={plant} />}
-    </div>
-  );
+  return <div>{plant && <SingleDetails singlePlant={plant} />}</div>;
 };
 
 export default PlantsDetails;

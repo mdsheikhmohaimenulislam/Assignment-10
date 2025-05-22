@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import SingleFlower from "./SingleFlower";
 
-const flowerPromise = fetch("/public/Flowers.json").then((res) => res.json());
+const flowerPromise = fetch("/Flowers.json").then((res) => res.json());
 
 const Flower = () => {
   const flowers = use(flowerPromise);

@@ -10,7 +10,7 @@ const MyPlants = () => {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/plants")
+    fetch("https://mango-server-seven.vercel.app/plants")
       .then((res) => res.json())
       .then((data) => {
         const filterPlants = data.filter(
@@ -18,7 +18,7 @@ const MyPlants = () => {
         );
         setPlants(filterPlants);
       });
-      document.title = "My Plants";
+    document.title = "My Plants";
   }, []);
 
   // Deleted section
@@ -34,7 +34,7 @@ const MyPlants = () => {
     }).then((result) => {
       console.log(result);
       // Start Deleted the Plant
-      fetch(`http://localhost:5000/plants/${id}`, {
+      fetch(`https://mango-server-seven.vercel.app/plants/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -69,7 +69,7 @@ const MyPlants = () => {
           />
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

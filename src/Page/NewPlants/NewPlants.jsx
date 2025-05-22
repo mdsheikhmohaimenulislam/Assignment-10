@@ -5,15 +5,13 @@ const NewPlants = () => {
   const [newPlants, setNewPlants] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/new-plants")
+    fetch("https://mango-server-seven.vercel.app/new-plants")
       .then((res) => res.json())
       .then((data) => {
         setNewPlants(data);
       });
-        document.title = "Home";
+    document.title = "Home";
   }, []);
-
-
 
   return (
     <div className="mt-20 mb-20">
