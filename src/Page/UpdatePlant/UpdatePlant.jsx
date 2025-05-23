@@ -20,10 +20,10 @@ const UpdatePlant = () => {
     return (
       <div className="w-2/5 mx-auto ">
         <Lottie animationData={animation} />
-        <div className="text-center mt-20 text-5xl">
+        <div className="text-center mt-20  text-5xl">
           <button
             onClick={handleBack}
-            className="btn bg-green-700 text-white rounded-md"
+            className="btn mb-20 bg-green-700 text-white rounded-md"
           >
             Back
           </button>
@@ -85,7 +85,7 @@ const UpdatePlant = () => {
   return (
     <>
       <div>
-        <section className="p-6 dark:bg-gray-100 dark:text-gray-900 mb-20">
+        <section className="p-6 dark:bg-gray-100 dark:text-gray-900 mb-20 ">
           <h1 className="text-center font-extrabold text-4xl mb-15">
             Update Plant
           </h1>
