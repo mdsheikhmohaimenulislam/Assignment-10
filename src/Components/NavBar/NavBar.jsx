@@ -46,9 +46,11 @@ const { theme, handleToggleTheme } = use(ThemeContext);
     </>
   );
 
+  // ${theme === "dark"? "bg-gray-600" : "bg-base-300"}
+
   return (
-    <div className="w-11/12  mx-auto flex justify-between mb-10 bg-base-200 p-3">
-      <div className="navbar bg-base-100 shadow-sm">
+    <div className="w-11/12 mx-auto flex justify-between mb-10 p-3">
+      <div className={`navbar shadow-sm ${theme === "dark"? "bg-gray-600 text-white" : "bg-base-300 text-black"}`}>
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -1,13 +1,15 @@
 import React, { use, useEffect, useState } from "react";
-import NavBar from "../../Components/NavBar/NavBar";
+// import NavBar from "../../Components/NavBar/NavBar";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { Bounce, toast } from "react-toastify";
-import Footer from "../../Components/Footer/Footer";
+import { ThemeContext } from "../../Theme/ThemeContext";
+// import Footer from "../../Components/Footer/Footer";
 
 const AddPlant = () => {
   const { user } = use(AuthContext);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedCare, setSelectedCare] = useState("");
+  const {theme} = use(ThemeContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,7 +84,7 @@ const AddPlant = () => {
     <>
       {/* <NavBar /> */}
       <div className="mb-20">
-        <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
+        <section className={`table mb-20 p-6 ${theme === "dark"? "bg-gray-600" : "bg-base-300"}`}>
           <form
             onSubmit={handleSubmit}
             className="container flex flex-col mx-auto space-y-12"

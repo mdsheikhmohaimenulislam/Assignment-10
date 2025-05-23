@@ -4,11 +4,13 @@ import { toast } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaFacebook } from "react-icons/fa";
+import { ThemeContext } from "../../Theme/ThemeContext";
 
 const Footer = () => {
 
 
       const { googleHandle } = use(AuthContext);
+      const {theme} = use(ThemeContext)
 
  // google set up
   const googleSignInHandle = () => {
@@ -38,7 +40,7 @@ const Footer = () => {
 
   return (
     <div>
-      <footer className="footer footer-horizontal footer-center bg-base-300 text-base-content rounded p-10">
+      <footer className={`footer footer-horizontal footer-center text-base-content rounded p-10  ${theme === "dark"? "bg-gray-600 text-white" : "bg-base-300 text-black"}`}>
             <div className="flex items-center">
               <img
                 className="-ml-6 md:ml-0 w-[50px] h-[50px]"

@@ -4,14 +4,16 @@ import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
-import Footer from "../../Components/Footer/Footer";
-import NavBar from "../../Components/NavBar/NavBar";
+import { ThemeContext } from "../../Theme/ThemeContext";
+// import Footer from "../../Components/Footer/Footer";
+// import NavBar from "../../Components/NavBar/NavBar";
 
 const Register = () => {
   const navigate = useNavigate();
   const { signInHandle, updateProfileHandle, setUser, googleHandle } =
     use(AuthContext);
   const [errorMessage, setErrorMessage] = useState("");
+  const {theme} = use(ThemeContext)
 
   const registerHandel = (e) => {
     e.preventDefault();
@@ -92,13 +94,14 @@ const Register = () => {
     document.title = "Register";
   }, []);
 
+
   return (
     <>
     {/* <NavBar/> */}
-      <div className="mb-10 mt-10 bg-base-200 min-h-screen p-10">
+      <div className={`mb-10 mt-10  min-h-screen p-10 ${theme === "dark"? "bg-gray-600" : "bg-base-300"}`}>
         <div className="w-full mx-auto max-w-md p-10 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Register</h1>
-          <form onSubmit={registerHandel} className="space-y-6">
+          <form onSubmit={registerHandel} className="space-y-6 ">
             <div className="space-y-1 text-sm">
               <label className="block dark:text-gray-600">Your Name</label>
               <input

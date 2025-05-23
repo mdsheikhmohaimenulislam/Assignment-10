@@ -1,7 +1,11 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { ThemeContext } from "../../Theme/ThemeContext";
 
 const SingleDetails = (plants) => {
+
+  const {theme} = use(ThemeContext)
+
   const {
     photo,
     name,
@@ -14,9 +18,11 @@ const SingleDetails = (plants) => {
     Category,
   } = plants?.singlePlant || {};
 
+
+
   return (
     <div>
-      <div className="card bg-base-100  shadow-sm mb-20">
+      <div className={`card shadow-sm mb-20 p-6 ${theme === "dark"? "bg-gray-600 text-white" : "bg-base-300 text-black"}`}>
         <figure>
           <img width={400} src={photo} alt="photo" />
         </figure>
