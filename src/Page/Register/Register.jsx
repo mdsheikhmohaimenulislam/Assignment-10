@@ -65,8 +65,7 @@ const Register = () => {
   const googleSignInHandle = () => {
     googleHandle()
       .then((res) => {
-        console.log(res);
-
+        if(res){
         toast.success("Successful", {
           position: "top-right",
           autoClose: 5000,
@@ -79,6 +78,9 @@ const Register = () => {
         });
 
         navigate(location?.state || "/");
+        }
+
+
       })
       .catch((error) => {
         console.log(error);
@@ -92,8 +94,8 @@ const Register = () => {
 
   return (
     <>
-    <NavBar/>
-      <div className="w-11/12 mx-auto mb-10 mt-10 bg-base-200 min-h-screen p-10">
+    {/* <NavBar/> */}
+      <div className="mb-10 mt-10 bg-base-200 min-h-screen p-10">
         <div className="w-full mx-auto max-w-md p-10 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Register</h1>
           <form onSubmit={registerHandel} className="space-y-6">
@@ -196,7 +198,7 @@ const Register = () => {
           </p>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

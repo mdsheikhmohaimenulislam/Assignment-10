@@ -42,9 +42,13 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://mango-server-seven.vercel.app/plants/${params.id}`),
       },
-    ],
-  },
-  {
+
+
+
+
+
+
+        {
     path: "/AddPlants",
     element: (
       <PrivateRouter>
@@ -68,4 +72,7 @@ export const router = createBrowserRouter([
     path: "/register",
     Component: Register,
   },
+    ],
+  },
+
 ]);

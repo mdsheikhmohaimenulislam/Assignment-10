@@ -80,8 +80,8 @@ const AddPlant = () => {
 
   return (
     <>
-      <NavBar />
-      <div className="w-11/12 mx-auto">
+      {/* <NavBar /> */}
+      <div className="mb-20">
         <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
           <form
             onSubmit={handleSubmit}
@@ -259,7 +259,7 @@ const AddPlant = () => {
           </form>
         </section>
       </div>
-      <Footer />
+      {/* // <Footer /> */}
     </>
   );
 };

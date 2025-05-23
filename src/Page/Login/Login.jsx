@@ -97,8 +97,8 @@ const Login = () => {
 
   return (
     <>
-      <NavBar />
-      <div className="w-11/12 mx-auto mb-10 bg-base-200  p-10 min-h-screen ">
+      {/* <NavBar /> */}
+      <div className=" mb-10 bg-base-200  p-10 min-h-screen ">
         <div className="w-full mx-auto mt-15 max-w-md p-10 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
           <h1 className="text-2xl font-bold text-center">Login</h1>
           <form onSubmit={loginHandleContent} className="space-y-6">
@@ -191,7 +191,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 };

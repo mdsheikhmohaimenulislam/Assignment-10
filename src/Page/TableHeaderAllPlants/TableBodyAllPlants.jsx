@@ -1,17 +1,19 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import { ThemeContext } from "../../Theme/ThemeContext";
 
 const TableBodyAllPlants = ({ plant }) => {
 
 
+  const {theme} = use(ThemeContext)
 
   const { photo, _id ,name, Category, WateringFrequency, care, LastWateredDate } =
     plant || {};
 
   return (
     <>
-      <tr>
+      <tr  className={`${theme === "dark"? "text-white" : "text-black"}`}>
         <td>
           <div className="avatar">
             <div className="mask mask-squircle h-12 w-12">

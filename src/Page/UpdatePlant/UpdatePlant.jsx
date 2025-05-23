@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { use,  useState } from "react";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { Link, useLoaderData, useNavigate } from "react-router";
 import { Bounce, toast } from "react-toastify";
@@ -85,7 +85,7 @@ const UpdatePlant = () => {
   return (
     <>
       <div>
-        <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
+        <section className="p-6 dark:bg-gray-100 dark:text-gray-900 mb-20">
           <h1 className="text-center font-extrabold text-4xl mb-15">
             Update Plant
           </h1>

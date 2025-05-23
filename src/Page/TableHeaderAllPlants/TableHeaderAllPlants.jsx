@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import TableBodyAllPlants from "./TableBodyAllPlants";
+import { ThemeContext } from "../../Theme/ThemeContext";
 
 const TableHeaderAllPlants = () => {
   const [plants, setPlants] = useState([]);
-
   const [search, setSearch] = useState("");
+  const {theme} = use(ThemeContext)
 
   useEffect(() => {
     fetch(`https://mango-server-seven.vercel.app/plants?searchParams=${search}`)
@@ -46,9 +47,9 @@ const TableHeaderAllPlants = () => {
       </div>
       <section>
         <div className="overflow-x-auto">
-          <table className="table">
+          <table className={`table mb-20 ${theme === "dark"? "bg-gray-600" : "bg-base-300"}`}>
             {/* head */}
-            <thead>
+            <thead className={`${theme === "dark"? "text-white" : "text-black"}`}>
               <tr>
                 <th>photo</th>
                 <th>Name</th>
