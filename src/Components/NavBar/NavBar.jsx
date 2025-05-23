@@ -4,9 +4,13 @@ import { IoIosContact } from "react-icons/io";
 
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import { ThemeContext } from "../../Theme/ThemeContext";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
 const NavBar = () => {
   const { logOutHandle, user } = use(AuthContext);
+const { theme, handleToggleTheme } = use(ThemeContext);
+
 
   //   logOut section
   const handleLogOut = () => {
@@ -43,7 +47,7 @@ const NavBar = () => {
   );
 
   return (
-    <div className="w-11/12 mx-auto flex justify-between mb-10 bg-base-200 p-3 mt-5">
+    <div className="w-11/12  mx-auto flex justify-between mb-10 bg-base-200 p-3">
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
@@ -75,6 +79,21 @@ const NavBar = () => {
                 All Plants
               </NavLink>
               {Links}
+              {user ? (
+                <button
+                  onClick={handleLogOut}
+                  className="font-extrabold text-xl p-2 cursor-pointer"
+                >
+                  Log Out
+                </button>
+              ) : (
+                <Link
+                  to="/login"
+                  className="font-extrabold text-xl p-2 cursor-pointer"
+                >
+                  Login
+                </Link>
+              )}
             </ul>
           </div>
           <Link to="/">
@@ -119,13 +138,19 @@ const NavBar = () => {
           )}
 
           {/* Auth Button */}
-          <div className="btn px-10 bg-green-800 text-base-100 p-2 cursor-pointer">
+          <div className="btn hidden md:block px-10 bg-green-800 text-base-100 p-2 cursor-pointer">
             {user ? (
               <Link onClick={handleLogOut}>Log Out</Link>
             ) : (
               <Link to="/login">Login</Link>
             )}
           </div>
+
+          {/* Theme section */}
+
+          <button onClick={handleToggleTheme}>
+          {theme === "dark"? <IoMoonOutline size={25} /> : <IoSunnyOutline size={25} />}
+          </button>
         </div>
       </div>
     </div>

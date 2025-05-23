@@ -81,6 +81,7 @@ const googleHandle = () => {
   const userInfo = {
     user,
     loading,
+    setLoading,
     signInHandle,
     loginHandle,
     logOutHandle,

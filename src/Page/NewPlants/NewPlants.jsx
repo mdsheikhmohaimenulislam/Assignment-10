@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import SingleNewPlant from "../SingleNewPlant/SingleNewPlant";
+import { ThemeContext } from "../../Theme/ThemeContext";
 
 const NewPlants = () => {
   const [newPlants, setNewPlants] = useState([]);
+  const {theme} =use(ThemeContext)
 
   useEffect(() => {
     fetch("https://mango-server-seven.vercel.app/new-plants")
@@ -15,7 +17,7 @@ const NewPlants = () => {
 
   return (
     <div className="mt-20 mb-20">
-      <h1 className="text-5xl text-center mb-20 font-extrabold underline">
+      <h1 className={`text-5xl text-center mb-20 font-extrabold underline  ${theme ==="dark"? " text-white" : "text-black"}`}>
         New Plants
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-20">

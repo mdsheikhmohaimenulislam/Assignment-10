@@ -1,4 +1,5 @@
 import React from "react";
+import { Tooltip } from "react-tooltip";
 
 const SingleNewPlant = ({ newPlant }) => {
 
@@ -6,7 +7,8 @@ const SingleNewPlant = ({ newPlant }) => {
 
   return (
     <div>
-      <div className="card bg-base-100 shadow-sm">
+      <Tooltip anchorSelect="#my-anchor-element"  content="Go to the All Plants Section"  />
+      <div  id="my-anchor-element" className="card bg-base-100 shadow-sm">
         <figure>
           <img
             src={photo}
