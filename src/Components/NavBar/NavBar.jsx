@@ -9,8 +9,7 @@ import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
 const NavBar = () => {
   const { logOutHandle, user } = use(AuthContext);
-const { theme, handleToggleTheme } = use(ThemeContext);
-
+  const { theme, handleToggleTheme } = use(ThemeContext);
 
   //   logOut section
   const handleLogOut = () => {
@@ -50,7 +49,11 @@ const { theme, handleToggleTheme } = use(ThemeContext);
 
   return (
     <div className="w-11/12 mx-auto flex justify-between mb-10 p-3">
-      <div className={`navbar shadow-sm ${theme === "dark"? "bg-gray-600 text-white" : "bg-base-300 text-black"}`}>
+      <div
+        className={`navbar shadow-sm ${
+          theme === "dark" ? "bg-gray-600 text-white" : "bg-base-300 text-black"
+        }`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -72,7 +75,7 @@ const { theme, handleToggleTheme } = use(ThemeContext);
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className={`menu  menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow ${theme === "dark"? "bg-gray-600 text-white" : "bg-base-300 text-black"}`}
             >
               <NavLink className="text-xl font-extrabold" to="/">
                 Home
@@ -84,7 +87,7 @@ const { theme, handleToggleTheme } = use(ThemeContext);
               {user ? (
                 <button
                   onClick={handleLogOut}
-                  className="font-extrabold text-xl p-2 cursor-pointer"
+                  className="font-extrabold bg-green-700 text-xl p-2 cursor-pointer"
                 >
                   Log Out
                 </button>
@@ -101,7 +104,7 @@ const { theme, handleToggleTheme } = use(ThemeContext);
           <Link to="/">
             <div className="flex items-center ">
               <img
-                className="-ml-6 md:ml-0 w-[50px] h-[50px]"
+                className="ml-3 md:ml-0 w-[50px] h-[50px]"
                 src="/logo.png"
                 alt=""
               />
@@ -124,7 +127,7 @@ const { theme, handleToggleTheme } = use(ThemeContext);
           {/* User Avatar */}
           {user && user.photoURL ? (
             <img
-              className="w-[45px] h-[45px] hidden md:block rounded-full cursor-pointer"
+              className="w-[45px] h-[45px] rounded-full cursor-pointer"
               src={user.photoURL}
               alt="User Avatar"
             />
@@ -151,7 +154,11 @@ const { theme, handleToggleTheme } = use(ThemeContext);
           {/* Theme section */}
 
           <button onClick={handleToggleTheme}>
-          {theme === "dark"? <IoMoonOutline size={25} /> : <IoSunnyOutline size={25} />}
+            {theme === "dark" ? (
+              <IoMoonOutline size={25} />
+            ) : (
+              <IoSunnyOutline size={25} />
+            )}
           </button>
         </div>
       </div>
