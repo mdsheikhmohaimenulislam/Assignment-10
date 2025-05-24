@@ -15,6 +15,8 @@ const NewPlants = () => {
     document.title = "Home";
   }, []);
 
+
+
   return (
     <div className="mt-20 mb-20">
       <h1 className={`text-5xl text-center mb-20 font-extrabold underline  ${theme ==="dark"? " text-white" : "text-black"}`}>
