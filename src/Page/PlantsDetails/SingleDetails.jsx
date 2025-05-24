@@ -18,7 +18,8 @@ const SingleDetails = (plants) => {
     Category,
   } = plants?.singlePlant || {};
 
-
+  const NextWateringDateConvert = new Date(NextWateringDate).toLocaleDateString()
+  const LastWateredDateConvert = new Date(LastWateredDate).toLocaleDateString()
 
   return (
     <div>
@@ -33,12 +34,12 @@ const SingleDetails = (plants) => {
             <div className="flex space-x-10 ">
               <p className="text-xl">{care}</p>
               <p className="text-xl">{WateringFrequency}</p>
-              <p className="text-xl">{NextWateringDate}</p>
+              <p className="text-xl">{NextWateringDateConvert}</p>
             </div>
 
             <p className="text-xl ml-10">{Health}</p>
             <p className="text-xl">{Category}</p>
-            <p className="text-xl">{LastWateredDate}</p>
+            <p className="text-xl">{LastWateredDateConvert}</p>
           </div>
         </div>
         <Link to="/">

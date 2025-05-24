@@ -1,19 +1,26 @@
 import React, { use } from "react";
 import { Link } from "react-router";
-import { AuthContext } from "../../Context/AuthContext/AuthContext";
+
 import { ThemeContext } from "../../Theme/ThemeContext";
 
 const TableBodyAllPlants = ({ plant }) => {
+  const { theme } = use(ThemeContext);
 
+  const {
+    photo,
+    _id,
+    name,
+    Category,
+    WateringFrequency,
+    care,
+    NextWateringDate,
+  } = plant || {};
 
-  const {theme} = use(ThemeContext)
-
-  const { photo, _id ,name, Category, WateringFrequency, care, LastWateredDate } =
-    plant || {};
+    const NextWateringDateConvert = new Date(NextWateringDate).toLocaleDateString()
 
   return (
     <>
-      <tr  className={`${theme === "dark"? "text-white" : "text-black"}`}>
+      <tr className={`${theme === "dark" ? "text-white" : "text-black"}`}>
         <td>
           <div className="avatar">
             <div className="mask mask-squircle h-12 w-12">
@@ -25,7 +32,7 @@ const TableBodyAllPlants = ({ plant }) => {
         <td>{Category}</td>
         <td>{WateringFrequency}</td>
         <td>{care}</td>
-        <td>{LastWateredDate}</td>
+        <td>{NextWateringDateConvert}</td>
         <td>
           <Link to={`/PlantsDetails/${_id}`}>
             <button className="btn btn-ghost btn-xs">Details</button>

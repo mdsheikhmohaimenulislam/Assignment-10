@@ -21,7 +21,9 @@ const SingleMyPlants = ({ plant, handleDeleted }) => {
     handleDeleted(id);
   };
 
-  const data = new Date(NextWateringDate).toLocaleDateString()
+  const NextWateringDateConvert = new Date(NextWateringDate).toLocaleDateString()
+    const LastWateredDateConvert = new Date(LastWateredDate).toLocaleDateString()
+
 
   return (
     <div>
@@ -36,10 +38,10 @@ const SingleMyPlants = ({ plant, handleDeleted }) => {
           </h2>
           <p className="text-gray-600">{Description}</p>
           <div className="flex mt-2 mb-2 font-extrabold ">
-            <p>{data}</p>
+            <p>{NextWateringDateConvert}</p>
             <p>{WateringFrequency}</p>
             <p>{care}</p>
-            <p>{LastWateredDate}</p>
+            <p>{LastWateredDateConvert}</p>
             <p>{Health}</p>
           </div>
           <div className="card-actions justify-end">

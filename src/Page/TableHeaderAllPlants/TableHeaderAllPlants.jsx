@@ -56,7 +56,7 @@ const TableHeaderAllPlants = () => {
                 <th>Category</th>
                 <th className="hidden md:block">WateringFrequency</th>
                 <th>Care</th>
-                <th className="hidden lg:block">LastWateredDate</th>
+                <th className="hidden lg:block">NextWateringDate</th>
                 <th>Details</th>
               </tr>
             </thead>
