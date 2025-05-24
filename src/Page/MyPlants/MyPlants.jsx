@@ -1,9 +1,8 @@
 import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import SingleMyPlants from "./SingleMyPlants";
-import NavBar from "../../Components/NavBar/NavBar";
+
 import Swal from "sweetalert2";
-import Footer from "../../Components/Footer/Footer";
 
 const MyPlants = () => {
   const { user } = use(AuthContext);
@@ -34,24 +33,28 @@ const MyPlants = () => {
     }).then((result) => {
       console.log(result);
       // Start Deleted the Plant
-      fetch(`https://mango-server-seven.vercel.app/plants/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount) {
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your Plant has been deleted.",
-              icon: "success",
-            });
-          }
-          // filter section
-          const remainingPlant = plants.filter(
-            (filterPlant) => filterPlant._id !== id
-          );
-          setPlants(remainingPlant);
-        });
+
+      if (result.isConfirmed) {
+        fetch(`https://mango-server-seven.vercel.app/plants/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            // console.log(data);
+            if (data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Plant has been deleted.",
+                icon: "success",
+              });
+            }
+            // filter section
+            const remainingPlant = plants.filter(
+              (filterPlant) => filterPlant._id !== id
+            );
+            setPlants(remainingPlant);
+          });
+      }
     });
   };
 
