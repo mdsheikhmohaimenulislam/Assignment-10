@@ -77,6 +77,13 @@
 
 - 🧭 Clean, user-friendly interface for easy plant management
 
+### 🌟 Key Features
+
+- Browse a comprehensive list of plants with detailed care information  
+- Responsive design with an intuitive, card-based layout  
+- User authentication for personalized plant management  
+- Easily add, update, and delete your own plants in the "My Plants" section  
+- Dark mode toggle for comfortable viewing day and night
 
 ### 💡 Feature 
 
