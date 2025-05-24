@@ -85,7 +85,7 @@ const UpdatePlant = () => {
   return (
     <>
       <div>
-        <section className="p-6 dark:bg-gray-100 dark:text-gray-900 mb-20 ">
+        <section className="p-6 overflow-scroll dark:bg-gray-100 dark:text-gray-900 mb-20 ">
           <h1 className="text-center font-extrabold text-4xl mb-15">
             Update Plant
           </h1>

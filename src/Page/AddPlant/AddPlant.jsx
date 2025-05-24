@@ -84,10 +84,10 @@ const AddPlant = () => {
     <>
       {/* <NavBar /> */}
       <div className="mb-20">
-        <section className={`table mb-20 p-6 ${theme === "dark"? "bg-gray-600" : "bg-base-300"}`}>
+        <section className={` overflow-scroll table mb-20 p-6 ${theme === "dark"? "bg-gray-600" : "bg-base-300"}`}>
           <form
             onSubmit={handleSubmit}
-            className="container flex flex-col mx-auto space-y-12"
+            className="container overflow-hidden flex flex-col mx-auto space-y-12"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
               {/* 1 */}

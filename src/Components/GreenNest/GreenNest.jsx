@@ -6,7 +6,7 @@ import { MdOutlineSmartphone } from "react-icons/md";
 
 const GreenNest = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-30">
+    <div className="grid grid-cols-1 overflow-x-hidden md:grid-cols-2 gap-10 mb-30">
       <div className="card w-96 bg-base-100 card-xs shadow-md">
         <div className="card-body p-5">
           <MdOutlineSmartphone size={30} />

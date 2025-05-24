@@ -26,7 +26,7 @@ const NewPlantsDetailsCard = ({ plant }) => {
   return (
     <div>
       <div
-        className={`card shadow-sm mb-20 p-6 ${
+        className={` overflow-scroll card shadow-sm mb-20 p-6 ${
           theme === "dark" ? "bg-gray-600 text-white" : "bg-base-300 text-black"
         }`}
       >
@@ -37,15 +37,16 @@ const NewPlantsDetailsCard = ({ plant }) => {
           <h2 className="card-title text-2xl">{name}</h2>
           <p className="text-base-600">{Description}</p>
           <div className="flex">
-            <div className="flex space-x-10 ">
+            <div className="md:flex flex-col space-y-3 space-x-10 ">
               <p className="text-xl">{care}</p>
               <p className="text-xl">{WateringFrequency}</p>
               <p className="text-xl">{NextWateringDateConvert}</p>
             </div>
-
-            <p className="text-xl ml-10">{Health}</p>
-            <p className="text-xl">{Category}</p>
-            <p className="text-xl">{LastWateredDateConvert}</p>
+            <div className="md:flex flex-col  space-y-3 gap-5">
+              <p className="text-xl ml-10">{Health}</p>
+              <p className="text-xl">{Category}</p>
+              <p className="text-xl">{LastWateredDateConvert}</p>
+            </div>
           </div>
         </div>
         <Link to="/">
