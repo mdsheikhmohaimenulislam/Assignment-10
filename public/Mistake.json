@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Not repotting",
+    "description": "Not repotting a plant as it ages or grows bigger can be a big mistake. Soil ages poorly because it erodes over time. Water can also impact the soil's quality.",
+    "category": "Plant care mistake",
+    "consequence": "Stunted plant growth and poor health due to degraded soil quality",
+    "img": "https://i.ibb.co/gb7r7xds/hq720.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Overwatering",
+    "description": "Providing too much water to plants can lead to root rot and fungal growth. Many plants, especially succulents, prefer infrequent watering.",
+    "category": "Plant care mistake",
+    "consequence": "Root damage, yellowing leaves, or plant death due to excessive moisture",
+    "img": "https://i.ibb.co/FbzXmBK6/images.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Insufficient light",
+    "description": "Placing plants in areas with inadequate light prevents photosynthesis, causing weak growth or leggy stems.",
+    "category": "Plant care mistake",
+    "consequence": "Stunted plant growth, pale leaves, or elongated stems seeking light",
+    "img": "https://i.ibb.co/FLMTz765/1-52dc584d-d029-406e-b2a6-84a81ff46450.webp"
+  },
+  {
+    "id": 4,
+    "name": "Ignoring pests",
+    "description": "Failing to check for or treat pests like spider mites or aphids can allow infestations to spread and harm plants.",
+    "category": "Plant care mistake",
+    "consequence": "Damaged leaves, weakened plants, or transmission of pests to other plants",
+    "img": "https://i.ibb.co/Qjm7z0VZ/nf-KPFg3-Rr-NNU6mh-Zhcjj58.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Improper soil choice",
+    "description": "Using the wrong soil type for a plant, such as heavy soil for succulents or poor-draining soil for moisture-sensitive plants, can hinder growth.",
+    "category": "Plant care mistake",
+    "consequence": "Poor root development, waterlogging, or nutrient deficiencies",
+    "img": "https://i.ibb.co/MxWmsqPw/soil9.jpg"
+  }
+]
