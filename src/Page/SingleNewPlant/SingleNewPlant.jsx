@@ -1,9 +1,13 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
 import { Tooltip } from "react-tooltip";
+import { ThemeContext } from "../../Theme/ThemeContext";
 
 const SingleNewPlant = ({ newPlant }) => {
   const { photo, name, Description, _id } = newPlant || {};
+  const {theme} = use(ThemeContext)
+
+  
 
   return (
     <div>
@@ -11,7 +15,7 @@ const SingleNewPlant = ({ newPlant }) => {
         anchorSelect="#my-anchor-element"
         content="Go to the All Plants Section"
       />
-      <div id="my-anchor-element" className="card bg-base-100 shadow-sm">
+      <div id="my-anchor-element" className={`card  shadow-sm ${theme === "dark"? "bg-gray-600 text-white" : "bg-base-300 text-black"}`}>
         <figure>
           <img src={photo} alt="phot" />
         </figure>

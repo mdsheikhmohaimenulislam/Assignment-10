@@ -20,10 +20,9 @@ const handleToggleTheme = () => {
 
 
 
-
-
+ // ${theme === "dark"? "bg-gray-600" : "bg-base-300"}
   return (
-    <ThemeContext.Provider value={{ theme, handleToggleTheme }}>
+    <ThemeContext.Provider value={{ theme, handleToggleTheme}}>
       {children}
     </ThemeContext.Provider>
   );

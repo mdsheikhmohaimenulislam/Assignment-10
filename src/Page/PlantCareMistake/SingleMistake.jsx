@@ -1,11 +1,14 @@
-import React from "react";
+import React, { use } from "react";
+import { ThemeContext } from "../../Theme/ThemeContext";
 
 const SingleMistake = ({ flower }) => {
   const { name, description, img } = flower || {};
 
+ const {theme} = use(ThemeContext)
+
   return (
     <div>
-      <div className="card bg-base-100  shadow-sm">
+      <div className={`card shadow-sm ${theme === "dark"? "bg-gray-600 text-white" : "bg-base-300 text-black"}`}>
         <figure>
           <img src={img} alt="photo" />
         </figure>

@@ -33,11 +33,11 @@ const NewPlantsDetailsCard = ({ plant }) => {
         <figure>
           <img width={400} src={photo} alt="photo" />
         </figure>
-        <div className="card-body">
+        <div className="card-body justify-center items-center">
           <h2 className="card-title text-2xl">{name}</h2>
-          <p className="text-base-600">{Description}</p>
+          <p className="text-base-600 md:w-4/6">{Description}</p>
           <div className="flex">
-            <div className="md:flex flex-col space-y-3 space-x-10 ">
+            <div className="md:flex sm:flex-col space-y-3 space-x-10 ">
               <p className="text-xl">{care}</p>
               <p className="text-xl">{WateringFrequency}</p>
               <p className="text-xl">{NextWateringDateConvert}</p>

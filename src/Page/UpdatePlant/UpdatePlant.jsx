@@ -80,7 +80,7 @@ const UpdatePlant = () => {
 
   const handleSelectCare = (value) => {
     setSelectedCare(value);
-  };
+  }
 
   return (
     <>

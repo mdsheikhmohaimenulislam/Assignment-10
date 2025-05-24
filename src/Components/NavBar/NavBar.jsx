@@ -75,7 +75,11 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className={`menu  menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow ${theme === "dark"? "bg-gray-600 text-white" : "bg-base-300 text-black"}`}
+              className={`menu  menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow ${
+                theme === "dark"
+                  ? "bg-gray-600 text-white"
+                  : "bg-base-300 text-black"
+              }`}
             >
               <NavLink className="text-xl font-extrabold" to="/">
                 Home
@@ -137,30 +141,29 @@ const NavBar = () => {
 
           {/* Hover Name Box */}
           {user && (
-            <div className="absolute -top-[38px] mr-15  right-0 bg-white border rounded shadow-md px-4 py-2 text-sm text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+            <div className="absolute -top-[38px] mt-12 mr-15  right-0 bg-white border rounded shadow-md px-4 py-2 text-sm text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
               {user.displayName || "User"}
             </div>
           )}
-
-          {/* Auth Button */}
-          <div className="btn hidden md:block px-10 bg-green-800 text-base-100 p-2 cursor-pointer">
-            {user ? (
-              <Link onClick={handleLogOut}>Log Out</Link>
-            ) : (
-              <Link to="/login">Login</Link>
-            )}
-          </div>
-
-          {/* Theme section */}
-
-          <button onClick={handleToggleTheme}>
-            {theme === "dark" ? (
-              <IoMoonOutline size={25} />
-            ) : (
-              <IoSunnyOutline size={25} />
-            )}
-          </button>
         </div>
+        {/* Auth Button */}
+        <div className="btn mr-3 hidden md:block px-10 bg-green-800 text-base-100 p-2 cursor-pointer">
+          {user ? (
+            <Link onClick={handleLogOut}>Log Out</Link>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
+        </div>
+
+        {/* Theme section */}
+
+        <button onClick={handleToggleTheme}>
+          {theme === "dark" ? (
+            <IoMoonOutline size={30} />
+          ) : (
+            <IoSunnyOutline size={30} />
+          )}
+        </button>
       </div>
     </div>
   );

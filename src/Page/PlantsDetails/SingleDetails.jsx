@@ -58,9 +58,9 @@ const SingleDetails = (plants) => {
         <figure>
           <img width={400} src={photo} alt="photo" />
         </figure>
-        <div className="card-body">
+        <div className="card-body items-center">
           <h2 className="card-title text-2xl">{name}</h2>
-          <p className="text-base-600">{Description}</p>
+          <p className="text-base-600 md:w-3/5">{Description}</p>
           <div className="flex">
             <div className="md:flex flex-col space-y-3 space-x-10 ">
               <p className="text-xl">{care}</p>
@@ -73,7 +73,6 @@ const SingleDetails = (plants) => {
               <p className="text-xl">{LastWateredDateConvert}</p>
             </div>
           </div>
-          Rating section
           <div className="mt-10">
             {/* Title and Rating */}
             <div className="flex justify-between mb-5">
