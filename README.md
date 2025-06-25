@@ -13,8 +13,6 @@
 
 ### Features
 
-- User Authentication – Secure login and registration using Firebase
-
 -  **User Authentication** – Secure registration and login using Firebase Auth  
 -  **Plant Management (CRUD)**  
   -  Add new plants  
