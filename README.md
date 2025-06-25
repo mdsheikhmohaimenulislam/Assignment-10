@@ -1,180 +1,76 @@
 
 # 🌿 GreenNest
+
+### Project Overview
+
 ##### GreenNest is Bangladesh’s ultimate destination for plant lovers! Whether you’re just starting your gardening journey or you’re a seasoned plant parent, GreenNest helps you discover unique plants, master care tips, and create your own lush, green sanctuary. Explore, learn, and grow with a vibrant community that shares your love for all things green.
 
 
+### 📌 Objective
+- To build an interactive and community-driven plant discovery platform that promotes gardening knowledge, plant care, and a green lifestyle.
 
-# 🖼️ Homepage Sections
-###  🔝 Navbar
+---
 
-- Left: GreenNest logo and name
+### Features
 
-- Center (Public): Home, All Plants
+- User Authentication – Secure login and registration using Firebase
 
-- Center (Logged-in): Add Plants, My Plants
+-  **User Authentication** – Secure registration and login using Firebase Auth  
+-  **Plant Management (CRUD)**  
+  -  Add new plants  
+  -  Update plant details  
+  -  Delete plants  
+-  **Plant Catalog** – View and explore different plant types with care tips  
+-  **Client-side Routing** – Fast and seamless navigation using React Router  
+-  **Responsive UI** – Mobile-first design using TailwindCSS and DaisyUI  
+-  **Community Vibes** – Platform for plant lovers to explore, learn, and grow together
+ 
+ ## 🌐 [Project live link](https://worldsmarathons-ab5a1.web.app/)
 
-- Right: User Image / Login Button, Dark Mode Toggle
-### 🎠 Hero Section
-- Full-width image or slider showcasing featured plants or promotions
+---
 
-### 🪴 New Plants
+##  Tech Stack Used
 
-- Plant cards with image and name
+###  Frontend
+- **React.js** – Component-based UI development  
+- **Tailwind CSS** – Utility-first styling framework  
+- **DaisyUI** – Prebuilt Tailwind CSS components  
+- **React Router** – For SPA (Single Page Application) routing  
 
-- “Details” button for more info
+###  Backend
+- **Node.js** – JavaScript runtime environment  
+- **Express.js** – Backend framework for building APIs  
+- **MongoDB** – NoSQL database for storing plant and user data  
 
-### 🌱 Beginner-Friendly Plants
+###  Authentication
+- **Firebase Authentication** – Handles secure login, registration, and session management
 
-- Section title + short helpful description
+###  Deployment
+- **Vercel** – Deployed frontend (React)  
+- **Render** – Deployed backend API (Node.js + Express)
 
-###  ❌  Top Plant Care Mistakes
+---
 
-### 🌱 Not Repotting
-
-- Roots get cramped! Repot yearly to give your plant room to grow.
-
-
-### 💧 Overwatering
-
-- Too much love drowns roots. Always check soil before watering.
-
-
-### ☀️ Insufficient Light
-
-- Plants need light to thrive. Match them with the right spot.
-
-### 🐛 Ignoring Pests
-
-- Tiny bugs can cause big damage. Inspect regularly and act fast.
-
-### 🪴 Improper Soil Choice
-
-- Wrong soil = weak roots. Use the mix your plant truly needs.
-
-
-### 🌿 All Plants Section
-- The All Plants page displays a table containing all the plants available in the system. Each plant includes essential information to help users identify and care for their plants.
-
-### 🔍 Name Search Feature
-- The All Plants page includes a search input field that allows users to filter plants by their name in real-time.
-
-### 📋 Table Columns:
-
-- Displays all plants in a clean, table format with photo, name, category, watering frequency, care info, next watering date, and a details button for each plant.
-- “Details” button for more info
-
-### 🔍 Plant Details Section
-
-- Displays complete plant information including image, name, category, watering frequency, care instructions, next watering date, user rating, reviews section, and a "Go Home" button for navigation.
-
-### 🌱 My Plants Section
-
-- A personalized section for logged-in users:
-
-- ✏️ Update Button: Edit plant details like name, category, care, and watering schedule
-
-- 🗑️ Delete Button: Remove a plant from the list with a single click
-
-- 🧭 Clean, user-friendly interface for easy plant management
-
-### 🌟 Key Features
-
-- Browse a comprehensive list of plants with detailed care information  
-- Responsive design with an intuitive, card-based layout  
-- User authentication for personalized plant management  
-- Easily add, update, and delete your own plants in the "My Plants" section  
-- Dark mode toggle for comfortable viewing day and night
-
-### 💡 Feature 
-
-- ✅ GreenNest
-
-- 🛠️ Lifetime Support
-
-- 🇧🇩 All Bangladesh Delivery
-
-- 🔐 Secure Shipping
-
-
-## 🛠️ Tech Stack
-
-- React.js
-
-- React Router
-
-- Firebase Authentication
-
-- TailwindCSS 
-
-- DaisyUi
-- react toastify
-- react-tooltip
-- lottie-react
-
-## Installation
-
-Install my-project all package
+## Setup and Installation
+#### To get started with the project, follow these steps:
 
 ```bash
-npm create vite@latest AppStore -- --template react
-  
-```
-```bash
-cd GreenNest
+git clone https://github.com/mdsheikhmohaimenulislam/Assignment-10
+
 ```
 
 ```bash
-npm install
+cd Assignment-10
+
 ```
+
+```bash
+ npm install
+
+```
+
 
 ```bash
 npm run dev
-```
-## DaisyUi
-
-```bash
-npm i -D daisyui@latest
-```
-## TailwindCss
-```bash
-npm install tailwindcss @tailwindcss/vite
-```
-## React Router
-
-```bash
-npm i react-router
 
 ```
-## React-Toastify
-
-```bash
-npm i react-Toastify
-```
-## React-tooltip
-
-```bash
-npm i react-tooltip
-```
-## React-lottie
-
-```bash
-npm i react-lottie
-```
-## Firebase
-
-```bash
-npm install firebase
-```
-
-## 🌐 Live Demo
-
-Check out the live version here: [GreenNest Live](https://greennest-dd0be.web.app/)
-
-##  Acknowledgements
-
-- [Firebase](https://firebase.google.com/)
-- [React Router](https://reactrouter.com/)
-- [Icons8](https://icons8.com/)
-- [Heroicons](https://heroicons.com/)
-- [Lottiefiles](https://lottiefiles.com/free-animations/react)
-- [Tooltip](https://react-tooltip.com/docs/getting-started)
