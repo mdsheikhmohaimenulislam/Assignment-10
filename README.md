@@ -25,7 +25,7 @@
 -  **Responsive UI** – Mobile-first design using TailwindCSS and DaisyUI  
 -  **Community Vibes** – Platform for plant lovers to explore, learn, and grow together
  
- ## 🌐 [Project live link](https://worldsmarathons-ab5a1.web.app/)
+ ## 🌐 [Project live link](https://greennest-dd0be.web.app/)
 
 ---
 
