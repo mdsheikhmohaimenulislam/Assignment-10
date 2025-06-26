@@ -96,12 +96,14 @@ const NavBar = () => {
                   Log Out
                 </button>
               ) : (
-                <Link
-                  to="/login"
-                  className="font-extrabold text-xl p-2 cursor-pointer"
-                >
-                  Login
-                </Link>
+                <>
+                  <Link
+                    to="/login"
+                    className="font-extrabold text-xl p-2 cursor-pointer"
+                  >
+                    Login
+                  </Link>
+                </>
               )}
             </ul>
           </div>
@@ -146,12 +148,29 @@ const NavBar = () => {
             </div>
           )}
         </div>
-        {/* Auth Button */}
-        <div className="btn mr-3 hidden md:block px-10 bg-green-800 text-base-100 p-2 cursor-pointer">
+        <div className="  mr-8 hidden md:flex items-center gap-x-4">
           {user ? (
-            <Link onClick={handleLogOut}>Log Out</Link>
+            <Link
+              onClick={handleLogOut}
+              className="btn bg-green-800 text-base-100 px-4 py-2"
+            >
+              Log Out
+            </Link>
           ) : (
-            <Link to="/login">Login</Link>
+            <>
+              <Link
+                to="/login"
+                className="btn bg-green-800 border-none text-base-100 px-4 py-2"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="btn bg-green-800 border-none text-base-100 px-4 py-2"
+              >
+                Register
+              </Link>
+            </>
           )}
         </div>
 

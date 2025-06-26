@@ -4,6 +4,7 @@ import { Link, useLoaderData, useNavigate } from "react-router";
 import { Bounce, toast } from "react-toastify";
 import Lottie from "lottie-react";
 import animation from "/public/Animation.json";
+import { FaArrowLeft } from "react-icons/fa";
 
 const UpdatePlant = () => {
   const { user } = use(AuthContext);
@@ -85,13 +86,22 @@ const UpdatePlant = () => {
   return (
     <>
       <div>
-        <section className="p-6 overflow-scroll dark:bg-gray-100 dark:text-gray-900 mb-10">
+        <section className="p-6 mt-10 overflow-scroll dark:bg-gray-100 dark:text-gray-900 mb-10">
+          {/* 🔙 Back Home Button */}
+                  <div className="flex items-center justify-start mb-6">
+                    <Link
+                     to="/"
+                      className="flex items-center gap-2 text-sm px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+                    >
+                      <FaArrowLeft /> Back Home
+                    </Link>
+                  </div>
           <h1 className="text-center font-extrabold text-4xl mb-10 mt-4">
             Update Plant
           </h1>
           <form
             onSubmit={handleUpdate}
-            className="container flex flex-col mx-auto space-y-5"
+            className="container flex flex-col mx-auto space-y-10"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
               {/* 1 */}

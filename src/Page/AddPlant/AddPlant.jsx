@@ -1,72 +1,17 @@
-import React, { use, useEffect, useState } from "react";
-// import NavBar from "../../Components/NavBar/NavBar";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { Bounce, toast } from "react-toastify";
 import { ThemeContext } from "../../Theme/ThemeContext";
-// import Footer from "../../Components/Footer/Footer";
+import { useNavigate } from "react-router";
+import { FaArrowLeft } from "react-icons/fa";
 
 const AddPlant = () => {
-  const { user } = use(AuthContext);
+  const { user } = useContext(AuthContext);
+  const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
+
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedCare, setSelectedCare] = useState("");
-  const { theme } = use(ThemeContext);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const photo = form.photo.value;
-    const name = form.name.value;
-    const Category = selectedCategory;
-    const Description = form.Description.value;
-    const care = selectedCare;
-    const WateringFrequency = form.WateringFrequency.value;
-    const LastWateredDate = form.LastWateredDate.value;
-    const NextWateringDate = form.NextWateringDate.value;
-    const Health = form.Health.value;
-    const displayName = form.displayName.value;
-    const email = form.email.value;
-
-    const allData = {
-      photo,
-      name,
-      Category,
-      Description,
-      care,
-      WateringFrequency,
-      LastWateredDate,
-      NextWateringDate,
-      Health,
-      displayName,
-      email,
-    };
-
-    // Send Plants to the DB.
-    fetch("https://mango-server-seven.vercel.app/plants", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(allData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          toast.success("Plant Added Successfully", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          });
-          //   form.reset()
-        }
-      });
-  };
 
   useEffect(() => {
     document.title = "Add Plants";
@@ -80,196 +25,188 @@ const AddPlant = () => {
     setSelectedCare(value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const allData = {
+      photo: form.photo.value,
+      name: form.name.value,
+      Category: selectedCategory,
+      Description: form.Description.value,
+      care: selectedCare,
+      WateringFrequency: form.WateringFrequency.value,
+      LastWateredDate: form.LastWateredDate.value,
+      NextWateringDate: form.NextWateringDate.value,
+      Health: form.Health.value,
+      displayName: form.displayName.value,
+      email: form.email.value,
+    };
+
+    fetch("https://mango-server-seven.vercel.app/plants", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(allData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Plant Added Successfully", {
+            position: "top-right",
+            autoClose: 3000,
+            transition: Bounce,
+          });
+        }
+      });
+  };
+
   return (
-    <>
-      {/* <NavBar /> */}
-      <div className="">
-        <section
-          className={` overflow-scroll table mb-10 p-6 ${
-            theme === "dark" ? "bg-base-300" : "bg-base-300"
-          }`}
-        >
-          <h1 className="text-center font-extrabold text-4xl mb-10 mt-4">
-            Add Plants
-          </h1>
-          <form
-            onSubmit={handleSubmit}
-            className="container overflow-hidden flex flex-col mx-auto space-y-5"
+    <div className="mt-10">
+      <section
+        className={`overflow-scroll table mb-10 p-6 rounded-xl ${
+          theme === "dark" ? "bg-base-300" : "bg-base-300"
+        }`}
+      >
+        {/* 🔙 Back Home Button */}
+        <div className="flex items-center justify-start mb-6">
+          <button
+            onClick={() => navigate("/")}
+            className="flex items-center gap-2 text-sm px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
-              {/* 1 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Plant Image</legend>
+            <FaArrowLeft /> Back Home
+          </button>
+        </div>
+
+        <h1 className="text-center font-extrabold text-4xl mb-10">
+          Add Plants
+        </h1>
+
+        <form
+          onSubmit={handleSubmit}
+          className="container flex flex-col mx-auto space-y-5"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 rounded-md shadow-sm">
+            {/* Fields */}
+            {[
+              { name: "photo", label: "Plant Image", placeholder: "Plant URL" },
+              { name: "name", label: "Plant Name", placeholder: "Plant Name" },
+              {
+                name: "Description",
+                label: "Description",
+                placeholder: "Description",
+              },
+              {
+                name: "WateringFrequency",
+                label: "Watering Frequency",
+                placeholder: "Watering Frequency",
+              },
+              {
+                name: "LastWateredDate",
+                label: "Last Watered Date",
+                type: "date",
+              },
+              {
+                name: "NextWateringDate",
+                label: "Next Watering Date",
+                type: "date",
+              },
+              {
+                name: "Health",
+                label: "Health Status",
+                placeholder: "Health Status",
+              },
+              {
+                name: "displayName",
+                label: "User Name",
+                placeholder: "User Name",
+                value: user?.displayName || "",
+                readOnly: true,
+              },
+              {
+                name: "email",
+                label: "User Email",
+                placeholder: "Email",
+                value: user?.email || "",
+                readOnly: true,
+              },
+            ].map((field, index) => (
+              <fieldset
+                key={index}
+                className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+              >
+                <legend className="fieldset-legend">{field.label}</legend>
                 <input
-                  type="photoURL"
-                  name="photo"
+                  type={field.type || "text"}
+                  name={field.name}
                   className="input"
-                  placeholder="Plant URL"
+                  placeholder={field.placeholder}
+                  value={field.value}
+                  readOnly={field.readOnly}
                 />
               </fieldset>
-              {/* 2 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Plant Name</legend>
-                <input
-                  type="text"
-                  name="name"
-                  className="input"
-                  placeholder="Plant Name"
-                />
-              </fieldset>
-              {/* 3 */}
+            ))}
 
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Category</legend>
-
-                <div className="dropdown dropdown-down">
-                  <div tabIndex={0} className="btn m-1">
-                    <input
-                      type="text"
-                      name="Category"
-                      className="input"
-                      placeholder="Category"
-                      value={selectedCategory}
-                      readOnly
-                    />
-                  </div>
-
-                  <ul
-                    tabIndex={0}
-                    className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
-                  >
-                    <li>
-                      <a onClick={() => handleSelect("succulent")}>succulent</a>
-                    </li>
-                    <li>
-                      <a onClick={() => handleSelect("fern")}>fern</a>
-                    </li>
-                    <li>
-                      <a onClick={() => handleSelect("flowering")}>flowering</a>
-                    </li>
-                  </ul>
+            {/* Category Dropdown */}
+            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+              <legend className="fieldset-legend">Category</legend>
+              <div className="dropdown dropdown-down">
+                <div tabIndex={0} className="btn m-1">
+                  <input
+                    type="text"
+                    name="Category"
+                    className="input"
+                    placeholder="Category"
+                    value={selectedCategory}
+                    readOnly
+                  />
                 </div>
-              </fieldset>
-
-              {/* 4 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Description</legend>
-                <input
-                  type="text"
-                  name="Description"
-                  className="input"
-                  placeholder="Description"
-                />
-              </fieldset>
-              {/* 5 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Care Level</legend>
-
-                <div className="dropdown dropdown-top">
-                  <div tabIndex={0} className="btn m-1">
-                    <input
-                      type="text"
-                      name="care"
-                      className="input"
-                      placeholder="Care Level"
-                      value={selectedCare}
-                      readOnly
-                    />
-                  </div>
-
-                  <ul
-                    tabIndex={0}
-                    className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
-                  >
-                    <li>
-                      <a onClick={() => handleSelectCare("easy")}>easy</a>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm"
+                >
+                  {["succulent", "fern", "flowering"].map((c) => (
+                    <li key={c}>
+                      <a onClick={() => handleSelect(c)}>{c}</a>
                     </li>
-                    <li>
-                      <a onClick={() => handleSelectCare("moderate")}>
-                        moderate
-                      </a>
-                    </li>
-                    <li>
-                      <a onClick={() => handleSelectCare("difficult")}>
-                        difficult
-                      </a>
-                    </li>
-                  </ul>
+                  ))}
+                </ul>
+              </div>
+            </fieldset>
+
+            {/* Care Dropdown */}
+            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+              <legend className="fieldset-legend">Care Level</legend>
+              <div className="dropdown dropdown-top">
+                <div tabIndex={0} className="btn m-1">
+                  <input
+                    type="text"
+                    name="care"
+                    className="input"
+                    placeholder="Care Level"
+                    value={selectedCare}
+                    readOnly
+                  />
                 </div>
-              </fieldset>
-              {/* 6 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Watering Frequency</legend>
-                <input
-                  type="text"
-                  name="WateringFrequency"
-                  className="input"
-                  placeholder="Watering Frequency"
-                />
-              </fieldset>
-              {/* 7 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Last Watered Date</legend>
-                <input
-                  type="date"
-                  name="LastWateredDate"
-                  className="input"
-                  placeholder="Last Watered Date"
-                />
-              </fieldset>
-              {/* 8 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Next Watering Date</legend>
-                <input
-                  type="date"
-                  name="NextWateringDate"
-                  className="input"
-                  placeholder="Next Watering Date"
-                />
-              </fieldset>
-              {/* 9 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">Health Status</legend>
-                <input
-                  type="text"
-                  name="Health"
-                  className="input"
-                  placeholder="Health Status"
-                />
-              </fieldset>
-              {/* 10 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">User Name</legend>
-                <input
-                  readOnly
-                  type="text"
-                  name="displayName"
-                  value={user?.displayName || ""}
-                  className="input"
-                  placeholder="My awesome page"
-                />
-              </fieldset>
-              {/* 11 */}
-              <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-                <legend className="fieldset-legend">User Email</legend>
-                <input
-                  readOnly
-                  type="email"
-                  name="email"
-                  value={user?.email || ""}
-                  className="input"
-                  placeholder="My awesome page"
-                />
-              </fieldset>
-            </div>
-            <button type="submit" className="w-full btn text-2xl p-8">
-              Add Plant
-            </button>
-          </form>
-        </section>
-      </div>
-      {/* // <Footer /> */}
-    </>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm"
+                >
+                  {["easy", "moderate", "difficult"].map((c) => (
+                    <li key={c}>
+                      <a onClick={() => handleSelectCare(c)}>{c}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" className="w-full btn text-2xl p-8">
+            Add Plant
+          </button>
+        </form>
+      </section>
+    </div>
   );
 };
 
