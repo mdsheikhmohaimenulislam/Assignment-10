@@ -4,6 +4,7 @@ import NewPlants from "../../Page/NewPlants/NewPlants";
 import CarouselSection from "../CarouselSection/CarouselSection";
 // import Flower from "../Flower/Flower";
 import GreenNest from "../GreenNest/GreenNest";
+import Routine from "../Routine /Routine";
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
       <NewPlants/>
       {/* <Flower/> */}
       {/* <PlantCareMistake/> */}
+      <Routine/>
       <GreenNest/>
     </>
   );

@@ -18,7 +18,7 @@ const NewPlants = () => {
 
 
   return (
-    <div className="mt-10 mb-10">
+    <div className="mt-10">
       <h1 className={`text-5xl text-center mb-10 font-extrabold underline  ${theme ==="dark"? " text-white bg" : "text-black"}`}>
         New Plants
       </h1>

@@ -40,7 +40,7 @@ const NewPlantDetails = () => {
   if (loading)
     return <span className="loading ml-100 loading-ring loading-xl"></span>;
 
-  return <div>{plant && <NewPlantsDetailsCard plant={plant}/>}</div>;
+  return <div  className="mt-10">{plant && <NewPlantsDetailsCard plant={plant}/>}</div>;
 };
 
 export default NewPlantDetails;
