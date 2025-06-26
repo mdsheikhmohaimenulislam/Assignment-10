@@ -48,7 +48,7 @@ const NavBar = () => {
   // ${theme === "dark"? "bg-gray-600" : "bg-base-300"}
 
   return (
-    <div className="w-11/12 mx-auto flex justify-between mb-10 p-3">
+    <div className="w-11/12 sticky top-0 z-50 mx-auto flex justify-between">
       <div
         className={`navbar shadow-sm ${
           theme === "dark" ? "bg-gray-600 text-white" : "bg-base-300 text-black"

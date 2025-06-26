@@ -1,63 +1,91 @@
-import React from "react";
+import { useRef, useState } from "react";
+
+const images = [
+  {
+    url: "/Carousel1.jpg",
+    title: "Plants Make People Happy",
+    subtitle: "New Stock Available, At This Season!",
+  },
+  {
+    url: "/Carousel2.jpg",
+    title: "Happiness Grows Here",
+    subtitle: "Find your leafy companion today.",
+  },
+  {
+    url: "/Carousel3.jpg",
+    title: "Plants for the Soul",
+    subtitle: "Explore our seasonal selection – happiness is just a pot away."
+  },
+  {
+    url: "/Carousel4.jpg",
+    title: "Grow Your Happy Place",
+    subtitle: "Start your green journey.",
+  },
+  {
+    url: "/Carousel5.jpg",
+    title: "Fresh Finds for Plant Lovers",
+    subtitle: "Bring nature indoors today.",
+  },
+];
 
 const CarouselSection = () => {
+  const [current, setCurrent] = useState(0);
+  const carouselRef = useRef(null);
+
+  const handlePrev = () => {
+    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  // Button click: page redirect (DOM full reload)
+  const handleButtonClick = () => {
+    window.location.href = "/MyPlants";
+  };
+
   return (
-    <div className="carousel w-full">
-
-      <div id="slide5" className="carousel-item relative w-full">
-        <img
-          src="/Carousel5.png"
-          className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide4" className="btn btn-circle">❮</a>
-          <a href="#slide1" className="btn btn-circle">❯</a>
-        </div>
-      </div>
-      <div id="slide1" className="carousel-item relative w-full">
-        <img
-          src="/Carousel1.png"
-          className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide5" className="btn btn-circle">❮</a>
-          <a href="#slide2" className="btn btn-circle">❯</a>
-        </div>
+    <div
+      ref={carouselRef}
+      className="relative w-full h-screen bg-cover bg-center transition-all duration-700"
+      style={{ backgroundImage: `url(${images[current].url})` }}
+    >
+      {/* Button on top */}
+      <div className="absolute top-100 left-1/2 -translate-x-1/2 z-20">
+        <button
+          onClick={handleButtonClick}
+          className="btn bg-green-800 text-white px-6 py-2 rounded-full  transition"
+        >
+          Go to My Plants
+        </button>
       </div>
 
-      <div id="slide2" className="carousel-item relative w-full">
-        <img
-          src="/Carousel2.png"
-          className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide1" className="btn btn-circle">❮</a>
-          <a href="#slide3" className="btn btn-circle">❯</a>
-        </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center px-4">
+        <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg mb-4">
+          {images[current].title}
+        </h1>
+        <p className="text-white text-base md:text-xl lg:text-2xl font-medium drop-shadow-sm max-w-2xl mb-6">
+          {images[current].subtitle}
+        </p>
       </div>
 
-      <div id="slide3" className="carousel-item relative w-full">
-        <img
-          src="/Carousel3.png"
-          className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide2" className="btn btn-circle">❮</a>
-          <a href="#slide4" className="btn btn-circle">❯</a>
-        </div>
+      {/* Arrows */}
+      <div className="absolute inset-0 flex justify-between items-center px-6">
+        <button
+          onClick={handlePrev}
+          className="btn btn-circle hover:bg-green-600 bg-black/50 text-white border-none"
+        >
+          ❮
+        </button>
+        <button
+          onClick={handleNext}
+          className="btn btn-circle bg-black/50 text-white hover:bg-black/70 border-none"
+        >
+          ❯
+        </button>
       </div>
-
-      <div id="slide4" className="carousel-item relative w-full">
-        <img
-          src="/Carousel4.png"
-          className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide3" className="btn btn-circle">❮</a>
-          <a href="#slide5" className="btn btn-circle">❯</a>
-        </div>
-      </div>
-
     </div>
   );
 };
