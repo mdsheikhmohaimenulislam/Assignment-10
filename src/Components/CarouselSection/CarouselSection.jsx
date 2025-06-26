@@ -42,7 +42,7 @@ const CarouselSection = () => {
 
   // Button click: page redirect (DOM full reload)
   const handleButtonClick = () => {
-    window.location.href = "/MyPlants";
+    window.location.href = "/AddPlants";
   };
 
   return (

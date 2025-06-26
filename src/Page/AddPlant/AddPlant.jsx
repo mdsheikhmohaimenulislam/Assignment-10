@@ -9,7 +9,7 @@ const AddPlant = () => {
   const { user } = use(AuthContext);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedCare, setSelectedCare] = useState("");
-  const {theme} = use(ThemeContext)
+  const { theme } = use(ThemeContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -83,11 +83,18 @@ const AddPlant = () => {
   return (
     <>
       {/* <NavBar /> */}
-      <div className="mb-20">
-        <section className={` overflow-scroll table mb-20 p-6 ${theme === "dark"? "bg-gray-600" : "bg-base-300"}`}>
+      <div className="">
+        <section
+          className={` overflow-scroll table mb-10 p-6 ${
+            theme === "dark" ? "bg-base-300" : "bg-base-300"
+          }`}
+        >
+          <h1 className="text-center font-extrabold text-4xl mb-10 mt-4">
+            Add Plants
+          </h1>
           <form
             onSubmit={handleSubmit}
-            className="container overflow-hidden flex flex-col mx-auto space-y-12"
+            className="container overflow-hidden flex flex-col mx-auto space-y-5"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
               {/* 1 */}
@@ -115,7 +122,7 @@ const AddPlant = () => {
               <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
                 <legend className="fieldset-legend">Category</legend>
 
-                <div className="dropdown dropdown-top">
+                <div className="dropdown dropdown-down">
                   <div tabIndex={0} className="btn m-1">
                     <input
                       type="text"
@@ -255,7 +262,7 @@ const AddPlant = () => {
                 />
               </fieldset>
             </div>
-            <button type="submit" className="w-full btn text-2xl p-8 mb-20">
+            <button type="submit" className="w-full btn text-2xl p-8">
               Add Plant
             </button>
           </form>

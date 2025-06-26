@@ -85,13 +85,13 @@ const UpdatePlant = () => {
   return (
     <>
       <div>
-        <section className="p-6 overflow-scroll dark:bg-gray-100 dark:text-gray-900 mb-20 ">
-          <h1 className="text-center font-extrabold text-4xl mb-15">
+        <section className="p-6 overflow-scroll dark:bg-gray-100 dark:text-gray-900 mb-10">
+          <h1 className="text-center font-extrabold text-4xl mb-10 mt-4">
             Update Plant
           </h1>
           <form
             onSubmit={handleUpdate}
-            className="container flex flex-col mx-auto space-y-12"
+            className="container flex flex-col mx-auto space-y-5"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
               {/* 1 */}
@@ -266,7 +266,7 @@ const UpdatePlant = () => {
                 />
               </fieldset>
             </div>
-            <button type="submit" className="w-full btn text-2xl p-8 mb-20">
+            <button type="submit" className="w-full btn text-2xl p-8">
               Update Plant
             </button>
           </form>

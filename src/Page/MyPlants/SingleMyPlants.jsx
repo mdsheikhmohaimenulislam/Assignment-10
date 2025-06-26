@@ -27,7 +27,7 @@ const SingleMyPlants = ({ plant, handleDeleted }) => {
 
   return (
     <div>
-      <div className="card mb-30 bg-base-100 shadow-sm">
+      <div className="card mb-30  bg-base-100 shadow-sm">
         <figure>
           <img src={photo} alt="photo" />
         </figure>
