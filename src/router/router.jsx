@@ -10,8 +10,9 @@ import TableHeaderAllPlants from "../Page/TableHeaderAllPlants/TableHeaderAllPla
 import PlantsDetails from "../Page/PlantsDetails/PlantsDetails";
 import Error from "../Components/Home/Error/Error";
 import UpdatePlant from "../Page/UpdatePlant/UpdatePlant";
-
 import NewPlantDetails from "../Page/SingleNewPlant/NewPlantDetails";
+import Profile from "../Page/Profile/Profile";
+import GreenNest from "../Components/GreenNest/GreenNest"
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,16 @@ export const router = createBrowserRouter([
       {
         path: "/Plant",
         Component: TableHeaderAllPlants,
+      },
+      {
+        path: "/greenNest",
+        Component:GreenNest,
+      },
+      {
+        path:'/profile',
+        element:<PrivateRouter>
+          <Profile/>
+        </PrivateRouter>
       },
       {
         path: "/NewPlants/:id",

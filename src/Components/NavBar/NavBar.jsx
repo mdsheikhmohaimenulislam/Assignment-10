@@ -40,6 +40,9 @@ const NavBar = () => {
           <NavLink className="font-extrabold text-xl" to="/MyPlants">
             My Plants
           </NavLink>
+          <NavLink className="font-extrabold text-xl" to="/profile">
+            profile
+          </NavLink>
         </>
       )}
     </>
@@ -125,6 +128,9 @@ const NavBar = () => {
             </NavLink>
             <NavLink className="text-xl font-extrabold" to="/Plant">
               All Plants
+            </NavLink>
+            <NavLink className="text-xl font-extrabold" to="/greenNest">
+              Support
             </NavLink>
             {Links}
           </ul>

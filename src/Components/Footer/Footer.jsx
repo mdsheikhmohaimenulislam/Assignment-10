@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaFacebook } from "react-icons/fa";
 import { ThemeContext } from "../../Theme/ThemeContext";
+import { Link } from "react-router";
 
 const Footer = () => {
 
@@ -50,10 +51,10 @@ const Footer = () => {
               <h1 className="ml-0 text-2xl font-extrabold">GreenNest</h1>
             </div>
         <nav className="grid grid-flow-col gap-4">
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to='/' className="link link-hover">Home</Link>
+          <Link to='/Plant' className="link link-hover">All Plants</Link>
+          <Link to='/greenNest' className="link link-hover">Support</Link>
+          <Link to='/profile' className="link link-hover">Profile</Link>
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4">
@@ -64,13 +65,12 @@ const Footer = () => {
           >
 <FcGoogle size={30} />
           </button>
-            <a>
-              
-              <IoLogoYoutube className="text-red-600" size={30} />
-            </a>
-            <a>
-             <FaFacebook size={30} className="text-blue-600" />
-            </a>
+            <Link to='https://www.youtube.com/'>
+              <IoLogoYoutube className="text-red-600 cursor-pointer" size={30} />
+            </Link>
+            <Link to='https://www.facebook.com/'>
+             <FaFacebook size={30} className="text-blue-600 cursor-pointer" />
+            </Link>
           </div>
         </nav>
         <aside>

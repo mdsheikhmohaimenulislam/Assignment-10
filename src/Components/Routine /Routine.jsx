@@ -37,8 +37,8 @@ const Routine = () => {
 
 
   return (
-    <div className={`my-16 bg-base-300 rounded-lg p-4 lg:p-8 ${
-          theme === "dark" ? "bg-gray-600 text-white" : "bg-base-300 text-black"
+    <div className={`my-10 rounded-lg p-4 lg:p-8 ${
+          theme === "dark" ? "bg-gray-600 text-white" : " bg-base-300 text-black"
         }`}>
       <div className="text-center mb-8">
         <h2 className={`text-2xl sm:text-3xl font-bold mb-4 ${theme === "dark" ? "text-white ": "text-black"}`}>

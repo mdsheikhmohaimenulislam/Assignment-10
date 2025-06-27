@@ -4,7 +4,7 @@ import { Gift } from 'lucide-react'; // Optional icon
 const SpecialOffer = () => {
   return (
     <section
-      className="bg-green-100 rounded-2xl p-6 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 my-6"
+      className="bg-base-300 b rounded-2xl p-6 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 my-6"
       aria-label="Special Eid offer on PC components"
     >
       <div className="flex items-center gap-4">

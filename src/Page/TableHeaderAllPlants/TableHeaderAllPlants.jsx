@@ -18,7 +18,7 @@ const TableHeaderAllPlants = () => {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-10">
         <div className="input  mb-10">
           <svg
             className="h-[1em] opacity-50 "
@@ -47,7 +47,7 @@ const TableHeaderAllPlants = () => {
       </div>
       <section>
         <div className="overflow-x-auto">
-          <table className={`table mb-20 ${theme === "dark"? "bg-gray-600" : "bg-base-300"}`}>
+          <table className={`table mb-10 ${theme === "dark"? "bg-gray-600" : "bg-base-300"}`}>
             {/* head */}
             <thead className={`${theme === "dark"? "text-white" : "text-black"}`}>
               <tr>

@@ -1,6 +1,10 @@
 import { Sun, Droplet, Thermometer, SprayCan, ShieldCheck, Clock } from 'lucide-react';
+import { ThemeContext } from '../../Theme/ThemeContext';
+import { use } from 'react';
 
 const PlantCareTips = () => {
+const { theme} = use(ThemeContext);
+
   const tips = [
     {
       icon: <Sun className="w-8 h-8 text-green-600" />,
@@ -53,11 +57,20 @@ const PlantCareTips = () => {
   ];
 
   return (
-    <section className="my-10 px-4">
-      <h2 className="text-3xl font-bold text-center mb-6 text-green-800">
+
+
+
+    <section className={`py-10 px-6 mb-10 ${
+          theme === "dark" ? "bg-gray-600 text-white" : " bg-base-300 text-black"
+        }`}>
+      <h2 className={`text-3xl font-bold text-center mb-6 ${
+          theme === "dark" ? " text-white" : " text-black"
+        }`} >
         🌿 Plant Care Tips
       </h2>
-      <p className="text-center mb-10 text-gray-600 max-w-2xl mx-auto">
+      <p className={`text-center mb-10 max-w-2xl mx-auto ${
+                  theme === "dark" ? " text-white" : " text-black"
+                }`}>
         Follow these simple guidelines to keep your plants healthy and thriving.
       </p>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
