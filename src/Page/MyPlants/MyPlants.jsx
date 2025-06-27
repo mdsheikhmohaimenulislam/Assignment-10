@@ -31,7 +31,7 @@ const MyPlants = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      console.log(result);
+      // console.log(result);
       // Start Deleted the Plant
 
       if (result.isConfirmed) {

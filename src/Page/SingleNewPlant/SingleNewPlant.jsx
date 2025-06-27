@@ -33,11 +33,11 @@ const SingleNewPlant = ({ newPlant }) => {
               : Description}
             <Link
               to={`/NewPlants/${_id}`}
-              className={`font-bold ml-1 cursor-pointer ${
+              className={`font-bold ml-1 btn cursor-pointer ${
           theme === "dark" ? "text-green-500 " : " text-green-600 "
         }`}
             >
-              Read More
+              See  More
             </Link>
           </p>
         </div>

@@ -98,7 +98,7 @@ const Dashboard = () => {
               <FaHome /> Home
             </NavLink>
           </li>
-{/* dashboard */}
+          {/* dashboard */}
           <li>
             <NavLink
               to="/dashboard"
@@ -126,6 +126,19 @@ const Dashboard = () => {
               <GiPlantsAndAnimals /> All Plants
             </NavLink>
           </li>
+          {/* My plants */}
+          <li>
+            <NavLink
+              to="/dashboard/dashMyPlants"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-green-800 text-xl font-bold"
+                  : "text-black text-xl font-bold"
+              }
+            >
+              <GiPlantsAndAnimals /> My Plants
+            </NavLink>
+          </li>
           {/* add plants  */}
           <li>
             <NavLink
@@ -139,20 +152,7 @@ const Dashboard = () => {
               <IoIosAddCircleOutline /> Add Plants
             </NavLink>
           </li>
-{/* My plants */}
-          <li>
-            <NavLink
-              to="/dashboard/dashMyPlants"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-green-800 text-xl font-bold"
-                  : "text-black text-xl font-bold"
-              }
-            >
-              <GiPlantsAndAnimals /> My Plants
-            </NavLink>
-          </li>
-{/* Profile */}
+          {/* Profile */}
           <li>
             <NavLink
               to="/dashboard/profile"

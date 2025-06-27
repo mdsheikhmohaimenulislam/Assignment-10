@@ -13,7 +13,7 @@ const DashMyPlantsBodyTB = ({ plant }) => {
   } = plant || {};
    const NextWateringDateConvert = new Date(NextWateringDate).toLocaleDateString()
 
-  console.log(plant);
+  // console.log(plant);
 
   return (
     <>

@@ -4,8 +4,9 @@ import { AuthContext } from "../../../Context/AuthContext/AuthContext";
 
 const DasHome = () => {
   const [allPlants, setAllPlants] = useState([]);
-  const[userAddPlants, setUserAddPlants] = useState([]);
-  const {user} = use(AuthContext);
+  const [userAddPlants, setUserAddPlants] = useState([]);
+  const [categoryList, setCategoryList] = useState({});
+  const { user } = use(AuthContext);
 
   useEffect(() => {
     // Fetch all plants
@@ -13,6 +14,12 @@ const DasHome = () => {
       .then((res) => res.json())
       .then((data) => {
         setAllPlants(data);
+
+        //  Corrected key: "Category"
+        const uniqueCategories = [
+          ...new Set(data.map((plant) => plant.Category)),
+        ];
+        setCategoryList(uniqueCategories);
       });
 
     // Fetch only user's plants
@@ -20,9 +27,7 @@ const DasHome = () => {
       fetch("https://mango-server-seven.vercel.app/plants")
         .then((res) => res.json())
         .then((data) => {
-          const filtered = data.filter(
-            (plant) => plant.email === user.email
-          );
+          const filtered = data.filter((plant) => plant.email === user.email);
           setUserAddPlants(filtered);
         });
     }
@@ -30,7 +35,7 @@ const DasHome = () => {
     document.title = "Dashboard";
   }, [user?.email]);
 
-  console.log(userAddPlants.length);
+
 
   return (
     <div className="p-6 min-h-screen bg-gray-100">
@@ -42,22 +47,26 @@ const DasHome = () => {
         <DashboardBox
           title="Total Plants Available"
           value={allPlants?.length}
-          color="#3b32e6" // Blue
+          unit="Plants"
+          color="#3b32e6"
         />
         <DashboardBox
           title="Total User Plants Available"
           value={userAddPlants?.length}
-          color="#fc8c23" // Orange
+          unit="plants"
+          color="#fc8c23"
         />
         <DashboardBox
-          title="Active Groups"
-          value={6}
-          color="#2ab4f3" // Light Blue
+          title="Active User"
+          value={user?.displayName}
+          unit="Login User"
+          color="#2ab4f3"
         />
         <DashboardBox
-          title="Active Groups"
-          value={6}
-          color="#fc2d8d" // Pink
+          title="Category"
+          value={categoryList.length}
+          color="#fc2d8d"
+          unit="Current Category"
         />
       </div>
     </div>

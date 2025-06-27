@@ -12,12 +12,16 @@ import Error from "../Components/Home/Error/Error";
 import UpdatePlant from "../Page/UpdatePlant/UpdatePlant";
 import NewPlantDetails from "../Page/SingleNewPlant/NewPlantDetails";
 import Profile from "../Page/Profile/Profile";
-import GreenNest from "../Components/GreenNest/GreenNest";
+
 
 import DasHome from "../Page/DashboardLayout/DashHome/DasHome";
 import Dashboard from "../Page/DashboardLayout/Dashboard/Dashboard";
 import DashMyPlants from "../Page/DashboardLayout/DashMyPlants/DashMyPlants";
 import DashAllPlants from "../Page/DashboardLayout/DashAllPlants/DashAllPlants";
+import DashAddPlant from "../Page/DashboardLayout/DashAddPlant/DashAddPlant";
+
+// import ContactForm from "../Page/Contact/Contact";
+import GreenNest from "../Components/GreenNest/GreenNest";
 
 export const router = createBrowserRouter([
   {
@@ -33,17 +37,21 @@ export const router = createBrowserRouter([
         path: "Plant",
         Component: TableHeaderAllPlants,
       },
+      {
+        path: "support",
+        Component: GreenNest,
+      },
       // {
-      //   path: "greenNest",
-      //   Component: GreenNest,
+      //   path: "contactForm",
+      //   Component: ContactForm,
       // },
 
       {
         path: "NewPlants/:id",
         element: (
-          <PrivateRouter>
+          // <PrivateRouter>
             <NewPlantDetails />
-          </PrivateRouter>
+          // </PrivateRouter>
         ),
       },
       {
@@ -87,6 +95,8 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
+  //? Dashboard section
   {
     path: "/dashboard",
     element: (
@@ -120,6 +130,12 @@ export const router = createBrowserRouter([
         path:'dashAllPlants',
         element:<PrivateRouter>
           <DashAllPlants/>
+        </PrivateRouter>
+      },
+      {
+        path:'dashAddPlant',
+        element:<PrivateRouter>
+          <DashAddPlant/>
         </PrivateRouter>
       },
     ],

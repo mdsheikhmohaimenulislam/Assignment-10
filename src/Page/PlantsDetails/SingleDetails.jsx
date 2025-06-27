@@ -32,7 +32,7 @@ const SingleDetails = ({ singlePlant }) => {
         theme === "dark" ? "bg-gray-700 text-white" : "bg-base-200 text-black"
       }`}
     >
-      {/* 🔙 Back Button */}
+      {/*  Back Button */}
       <div className="max-w-6xl mx-auto pt-6 px-4">
         <button
           onClick={() => navigate("/")}
@@ -44,7 +44,7 @@ const SingleDetails = ({ singlePlant }) => {
 
       <div className="max-w-6xl mx-auto my-6 md:my-10 p-6">
         <div className="flex flex-col md:flex-row gap-8 lg:gap-16">
-          {/* 🌱 Image */}
+          {/*  Image */}
           <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
             <img
               src={photo}
@@ -53,7 +53,7 @@ const SingleDetails = ({ singlePlant }) => {
             />
           </div>
 
-          {/* 📋 Plant Details */}
+          {/*  Plant Details */}
           <div className="w-full md:w-1/2 space-y-4 md:space-y-5">
             <h2 className="text-3xl font-bold">{name}</h2>
             <p><span className="font-semibold">Category:</span> {Category}</p>
@@ -63,7 +63,7 @@ const SingleDetails = ({ singlePlant }) => {
             <p><span className="font-semibold">Next Watering:</span> {NextWateringDateConvert}</p>
             <p className="mt-4"><span className="font-semibold">Care Level:</span> {care}</p>
 
-            {/* 📝 Description */}
+            {/*  Description */}
             <div className="pt-4 border-t border-gray-300">
               <h3 className="text-xl font-semibold mb-1">Description:</h3>
               <p className="leading-relaxed">{Description}</p>
