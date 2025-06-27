@@ -68,7 +68,7 @@ const Footer = () => {
             <Link to='https://www.youtube.com/'>
               <IoLogoYoutube className="text-red-600 cursor-pointer" size={30} />
             </Link>
-            <Link to='https://www.facebook.com/'>
+            <Link to='https://www.facebook.com/mohymimislam'>
              <FaFacebook size={30} className="text-blue-600 cursor-pointer" />
             </Link>
           </div>

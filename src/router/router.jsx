@@ -12,7 +12,10 @@ import Error from "../Components/Home/Error/Error";
 import UpdatePlant from "../Page/UpdatePlant/UpdatePlant";
 import NewPlantDetails from "../Page/SingleNewPlant/NewPlantDetails";
 import Profile from "../Page/Profile/Profile";
-import GreenNest from "../Components/GreenNest/GreenNest"
+import GreenNest from "../Components/GreenNest/GreenNest";
+
+import DasHome from "../Page/DashboardLayout/DashHome/DasHome";
+import Dashboard from "../Page/DashboardLayout/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -22,25 +25,26 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: "/",
         Component: Home,
       },
       {
-        path: "/Plant",
+        path: "Plant",
         Component: TableHeaderAllPlants,
       },
+      // {
+      //   path: "greenNest",
+      //   Component: GreenNest,
+      // },
       {
-        path: "/greenNest",
-        Component:GreenNest,
+        path: "profile",
+        element: (
+          <PrivateRouter>
+            <Profile />
+          </PrivateRouter>
+        ),
       },
       {
-        path:'/profile',
-        element:<PrivateRouter>
-          <Profile/>
-        </PrivateRouter>
-      },
-      {
-        path: "/NewPlants/:id",
+        path: "NewPlants/:id",
         element: (
           <PrivateRouter>
             <NewPlantDetails />
@@ -48,7 +52,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/PlantsDetails/:id",
+        path: "PlantsDetails/:id",
         element: (
           <PrivateRouter>
             <PlantsDetails />
@@ -56,16 +60,14 @@ export const router = createBrowserRouter([
         ),
         loader: () => fetch(`https://mango-server-seven.vercel.app/plants`),
       },
-
       {
-        path: "/updatePlant/:id",
+        path: "updatePlant/:id",
         Component: UpdatePlant,
         loader: ({ params }) =>
           fetch(`https://mango-server-seven.vercel.app/plants/${params.id}`),
       },
-
       {
-        path: "/AddPlants",
+        path: "AddPlants",
         element: (
           <PrivateRouter>
             <AddPlant />
@@ -73,7 +75,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/MyPlants",
+        path: "MyPlants",
         element: (
           <PrivateRouter>
             <MyPlants />
@@ -81,12 +83,29 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/login",
+        path: "login",
         Component: Login,
       },
       {
-        path: "/register",
+        path: "register",
         Component: Register,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRouter>
+        <Dashboard />
+      </PrivateRouter>
+    ),
+    // Component: () => (
+
+    // ),
+    children: [
+      {
+        index: true,
+        Component: DasHome,
       },
     ],
   },

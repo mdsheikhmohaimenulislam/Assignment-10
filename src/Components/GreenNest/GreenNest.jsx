@@ -12,7 +12,7 @@ const GreenNest = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center my-10">
       {/* Card 1 */}
       <Link to="https://www.plantshop.me/ae-en/">
-        <div className="card w-105 lg:w-96 bg-base-100 shadow-md">
+        <div className="card bg-base-100 shadow-md">
           <div className="card-body p-5 items-center text-center">
             <MdOutlineSmartphone size={30} />
             <h1 className="text-2xl font-bold">GreenNest</h1>
@@ -25,7 +25,7 @@ const GreenNest = () => {
 
       {/* Card 2 */}
       <Link to="https://www.plantshop.me/ae-en/">
-        <div className="card w-105 lg:w-96 bg-base-100 shadow-md">
+        <div className="card  bg-base-100 shadow-md">
           <div className="card-body p-5 items-center text-center">
             <GoPeople size={30} />
             <h1 className="text-2xl font-bold">Lifetime Support</h1>
@@ -38,7 +38,7 @@ const GreenNest = () => {
 
       {/* Card 3 */}
       <Link to="https://www.plantshop.me/ae-en/">
-        <div className="card w-105 lg:w-96 bg-base-100 shadow-md">
+        <div className="card bg-base-100 shadow-md">
           <div className="card-body p-5 items-center text-center">
             <IoHomeOutline size={30} />
             <h1 className="text-2xl font-bold">All Bangladesh Delivery</h1>
@@ -51,7 +51,7 @@ const GreenNest = () => {
 
       {/* Card 4 */}
       <Link to="https://www.plantshop.me/ae-en/">
-        <div className="card w-105 lg:w-96 bg-base-100 shadow-md">
+        <div className="card bg-base-100 shadow-md">
           <div className="card-body p-5 items-center text-center">
             <LiaShippingFastSolid size={30} />
             <h1 className="text-2xl font-bold">Secure Shipping</h1>
@@ -64,7 +64,7 @@ const GreenNest = () => {
 
       {/* ✅ Card 5 - New */}
       <Link to="https://www.plantshop.me/ae-en/">
-        <div className="card w-105 lg:w-96 bg-base-100 shadow-md">
+        <div className="card bg-base-100 shadow-md">
           <div className="card-body p-5 items-center text-center">
             <FaLeaf size={30} />
             <h1 className="text-2xl font-bold">Eco-Friendly Packaging</h1>
@@ -77,12 +77,12 @@ const GreenNest = () => {
 
       {/* ✅ Card 6 - New */}
       <Link to="https://www.plantshop.me/ae-en/">
-        <div className="card w-105 lg:w-96 bg-base-100 shadow-md">
+        <div className="card bg-base-100 shadow-md">
           <div className="card-body p-5 items-center text-center">
             <MdOutlineNaturePeople size={30} />
             <h1 className="text-2xl font-bold">Plant Care Guides</h1>
             <p className="text-base text-gray-500">
-              Tips & tutorials for every plant lover
+              Tips & tutorials for every plant lover & love
             </p>
           </div>
         </div>

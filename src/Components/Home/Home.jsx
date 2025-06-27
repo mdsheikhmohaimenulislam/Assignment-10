@@ -7,7 +7,7 @@ import SpecialOffer from "../../Page/SpecialOffer/SpecialOffer";
 // import PlantCareMistake from "../../Page/PlantCareMistake/PlantCareMistake";
 import CarouselSection from "../CarouselSection/CarouselSection";
 // import Flower from "../Flower/Flower";
-// import GreenNest from "../GreenNest/GreenNest";
+import GreenNest from "../GreenNest/GreenNest";
 import Routine from "../Routine /Routine";
 
 
@@ -25,7 +25,7 @@ const Home = () => {
       <AmazingFeatures/>
       <Routine/>
       <PlantCareTips/>
-      {/* <GreenNest/> */}
+      <GreenNest/>
     </>
   );
 };

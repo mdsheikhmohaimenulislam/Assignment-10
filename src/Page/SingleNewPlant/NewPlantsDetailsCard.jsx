@@ -52,7 +52,7 @@ const NewPlantsDetailsCard = ({ plant }) => {
 
           {/* Right Side – Details */}
           <div className="w-full md:w-1/2 space-y-4 md:space-y-5">
-            <h2 className="text-3xl font-bold text-green-700">{name}</h2>
+            <h2 className="text-3xl font-bold ">{name}</h2>
 
             <p>
               <span className="font-semibold">Category:</span> {Category}
@@ -78,7 +78,7 @@ const NewPlantsDetailsCard = ({ plant }) => {
 
             {/* Description */}
             <div className="pt-4 border-t border-gray-300">
-              <h3 className="text-xl font-semibold text-green-600 mb-1">
+              <h3 className="text-xl font-semibold  mb-1">
                 Description:
               </h3>
               <p className="leading-relaxed">{Description}</p>

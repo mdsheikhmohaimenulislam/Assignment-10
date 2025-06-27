@@ -40,8 +40,8 @@ const NavBar = () => {
           <NavLink className="font-extrabold text-xl" to="/MyPlants">
             My Plants
           </NavLink>
-          <NavLink className="font-extrabold text-xl" to="/profile">
-            profile
+          <NavLink className="font-extrabold text-xl" to="/dashboard">
+            Dashboard
           </NavLink>
         </>
       )}
@@ -90,6 +90,9 @@ const NavBar = () => {
               <NavLink className="text-xl font-extrabold" to="/Plant">
                 All Plants
               </NavLink>
+              <NavLink className="text-xl font-extrabold" to="/Dashboard">
+                Dashboard
+              </NavLink>
               {Links}
               {user ? (
                 <button
@@ -122,15 +125,12 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu gap-10 menu-horizontal mr-10 px-1">
+          <ul className="menu gap-5 menu-horizontal ml-20 px-1">
             <NavLink className="text-xl font-extrabold" to="/">
               Home
             </NavLink>
             <NavLink className="text-xl font-extrabold" to="/Plant">
               All Plants
-            </NavLink>
-            <NavLink className="text-xl font-extrabold" to="/greenNest">
-              Support
             </NavLink>
             {Links}
           </ul>
