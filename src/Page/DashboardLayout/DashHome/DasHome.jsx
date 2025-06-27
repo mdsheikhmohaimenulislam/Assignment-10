@@ -27,7 +27,7 @@ const DasHome = () => {
         });
     }
 
-    document.title = "Dashboard - GreenNest";
+    document.title = "Dashboard";
   }, [user?.email]);
 
   console.log(userAddPlants.length);

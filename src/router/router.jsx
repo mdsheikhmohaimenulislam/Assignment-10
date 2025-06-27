@@ -16,6 +16,7 @@ import GreenNest from "../Components/GreenNest/GreenNest";
 
 import DasHome from "../Page/DashboardLayout/DashHome/DasHome";
 import Dashboard from "../Page/DashboardLayout/Dashboard/Dashboard";
+import DashMyPlants from "../Page/DashboardLayout/DashMyPlants/DashMyPlants";
 
 export const router = createBrowserRouter([
   {
@@ -35,14 +36,7 @@ export const router = createBrowserRouter([
       //   path: "greenNest",
       //   Component: GreenNest,
       // },
-      {
-        path: "profile",
-        element: (
-          <PrivateRouter>
-            <Profile />
-          </PrivateRouter>
-        ),
-      },
+
       {
         path: "NewPlants/:id",
         element: (
@@ -105,8 +99,22 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: DasHome,
+        element: <DasHome />,
       },
+      {
+        path: "profile",
+        element: (
+          <PrivateRouter>
+            <Profile />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path:'dashMyPlants',
+        element:<PrivateRouter>
+          <DashMyPlants/>
+        </PrivateRouter>
+      }
     ],
   },
 ]);
