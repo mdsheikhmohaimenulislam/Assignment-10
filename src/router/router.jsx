@@ -20,7 +20,7 @@ import DashMyPlants from "../Page/DashboardLayout/DashMyPlants/DashMyPlants";
 import DashAllPlants from "../Page/DashboardLayout/DashAllPlants/DashAllPlants";
 import DashAddPlant from "../Page/DashboardLayout/DashAddPlant/DashAddPlant";
 
-// import ContactForm from "../Page/Contact/Contact";
+import ContactForm from "../Page/Contact/Contact";
 import GreenNest from "../Components/GreenNest/GreenNest";
 
 export const router = createBrowserRouter([
@@ -41,10 +41,10 @@ export const router = createBrowserRouter([
         path: "support",
         Component: GreenNest,
       },
-      // {
-      //   path: "contactForm",
-      //   Component: ContactForm,
-      // },
+      {
+        path: "contactForm",
+        Component: ContactForm,
+      },
 
       {
         path: "NewPlants/:id",

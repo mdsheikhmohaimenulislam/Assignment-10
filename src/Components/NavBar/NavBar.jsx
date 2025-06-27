@@ -138,9 +138,6 @@ const NavBar = () => {
             <NavLink className="text-xl font-extrabold" to="/support">
               Support
             </NavLink>
-            {/* <NavLink className="text-xl font-extrabold" to="/contactForm">
-              Contact Us
-            </NavLink> */}
             {Links}
           </ul>
         </div>

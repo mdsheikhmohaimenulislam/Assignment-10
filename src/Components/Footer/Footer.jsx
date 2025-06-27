@@ -59,8 +59,8 @@ const Footer = () => {
           <Link to="/greenNest" className="link link-hover">
             Support
           </Link>
-          <Link to="/dashboard/profile" className="link link-hover">
-            Profile
+          <Link to="/contactForm" className="link link-hover">
+            contactForm
           </Link>
         </nav>
         <nav>
