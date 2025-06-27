@@ -16,6 +16,7 @@ const DashMyPlants = () => {
           setPlants(filtered);
         });
     }
+    document.title = "My Plants";
   }, []);
 
   return (

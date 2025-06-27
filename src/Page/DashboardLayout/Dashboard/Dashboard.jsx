@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { CiLogout } from "react-icons/ci";
 import { GiPlantsAndAnimals } from "react-icons/gi";
 import { useNavigate } from "react-router";
+import { IoIosAddCircleOutline } from "react-icons/io";
 
 const Dashboard = () => {
   const { logOutHandle } = use(AuthContext);
@@ -97,7 +98,7 @@ const Dashboard = () => {
               <FaHome /> Home
             </NavLink>
           </li>
-
+{/* dashboard */}
           <li>
             <NavLink
               to="/dashboard"
@@ -111,20 +112,34 @@ const Dashboard = () => {
               <RxDashboard /> Dashboard
             </NavLink>
           </li>
+          {/* All plants */}
 
           <li>
             <NavLink
-              to="/dashboard/profile"
+              to="/dashboard/dashAllPlants"
               className={({ isActive }) =>
                 isActive
                   ? "text-green-800 text-xl font-bold"
                   : "text-black text-xl font-bold"
               }
             >
-              <CgProfile /> My Profile
+              <GiPlantsAndAnimals /> All Plants
             </NavLink>
           </li>
-
+          {/* add plants  */}
+          <li>
+            <NavLink
+              to="/dashboard/dashAddPlant"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-green-800 text-xl font-bold"
+                  : "text-black text-xl font-bold"
+              }
+            >
+              <IoIosAddCircleOutline /> Add Plants
+            </NavLink>
+          </li>
+{/* My plants */}
           <li>
             <NavLink
               to="/dashboard/dashMyPlants"
@@ -135,6 +150,19 @@ const Dashboard = () => {
               }
             >
               <GiPlantsAndAnimals /> My Plants
+            </NavLink>
+          </li>
+{/* Profile */}
+          <li>
+            <NavLink
+              to="/dashboard/profile"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-green-800 text-xl font-bold"
+                  : "text-black text-xl font-bold"
+              }
+            >
+              <CgProfile /> My Profile
             </NavLink>
           </li>
 

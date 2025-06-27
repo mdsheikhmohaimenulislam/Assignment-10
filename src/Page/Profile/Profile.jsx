@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { toast } from "react-toastify";
@@ -23,11 +23,16 @@ const Profile = () => {
         setEditing(false);
       })
       .catch(() => toast.error("Update failed"));
+     
   };
 
   const handleLogout = () => {
     logOutHandle().then(() => toast.error("Logged Out"));
   };
+
+  useEffect(()=> {
+     document.title = "Profile";
+  },[])
 
   return (
     <div className={`min-h-screen bg-base-300 flex items-center justify-center`}>
