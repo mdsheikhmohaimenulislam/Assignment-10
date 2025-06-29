@@ -36,9 +36,9 @@
 - **React Router** – For SPA (Single Page Application) routing  
 
 ###  Backend
-- **Node.js** – JavaScript runtime environment  
-- **Express.js** – Backend framework for building APIs  
-- **MongoDB** – NoSQL database for storing plant and user data  
+- **Node.js** – JavaScript runtime environment. 
+- **Express.js** – Backend framework for building APIs.  
+- **MongoDB** – NoSQL database for storing plant and user data.
 
 ###  Authentication
 - **Firebase Authentication** – Handles secure login, registration, and session management
